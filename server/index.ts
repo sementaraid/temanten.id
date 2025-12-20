@@ -6,12 +6,11 @@ const app = express()
 const isProd = process.env.NODE_ENV === 'production'
 
 const PORT = 3000
-const root = process.cwd()
 
 if (!isProd) {
-  setupDevServer(app, root)
+  setupDevServer(app)
 } else {
-  setupProdServer(app, root)
+  setupProdServer(app)
 }
 
 app.listen(PORT, () => {
