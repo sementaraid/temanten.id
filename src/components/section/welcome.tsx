@@ -1,12 +1,22 @@
 import { motion, AnimatePresence } from 'motion/react'
 import { Button } from '@/components/ui/button'
 import { useTemantenSetter, useTemantenState } from '@/context'
+import { useLayoutEffect } from 'react'
 
 export const SplashScreen = () => {
   const { screenState } = useTemantenState()
   const setUndanganState = useTemantenSetter()
 
   const show = screenState === 'welcome'
+
+  useLayoutEffect(() => {
+    if(screenState === 'welcome'){
+      document.body.classList.add('overflow-y-hidden')
+    }
+    return () => {
+      document.body.classList.remove('overflow-y-hidden')
+    }
+  }, [screenState])
 
   return (
     <AnimatePresence
