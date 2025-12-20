@@ -1,4 +1,4 @@
-import { TemantenContexTypet } from './types'
+import { type TemantenContexTypet } from './types'
 
 export const TEMANTEN_DEFAULT_VALUE: TemantenContexTypet = {
   playAudio: false,
