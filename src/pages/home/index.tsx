@@ -1,5 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { motion } from 'motion/react'
+import './styles/main.css'
 
 export default function App() {
   return (

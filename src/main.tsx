@@ -4,20 +4,10 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router";
-import Home from "@/pages/home"
-import MartaSunar from "@/pages/marta-sunar"
+import { getReleasedRoutes } from '@/routes';
 
-let router = createBrowserRouter([
-  {
-    path: "/",
-    Component: Home,
-  },
-  {
-    path: "marta-sunar",
-    Component: MartaSunar
-  }
-]);
-
+const router = createBrowserRouter(getReleasedRoutes())
+console.log("Released Routes:", getReleasedRoutes());
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <RouterProvider router={router} />

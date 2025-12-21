@@ -5,7 +5,7 @@ import { setupProdServer } from './http/prod'
 const app = express()
 const isProd = process.env.NODE_ENV === 'production'
 
-const PORT = 3000
+const PORT = isProd ? 3001 : 3000
 
 if (!isProd) {
   setupDevServer(app)
