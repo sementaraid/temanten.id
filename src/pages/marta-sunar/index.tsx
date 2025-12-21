@@ -9,7 +9,7 @@ import { LoveStory } from '@/components/section/love-story'
 import { Audio } from '@/components/features/audio'
 import { SplashScreen } from '@/components/section/welcome'
 import { TemantenProvider } from '@/context'
-import '@/styles/main.css'
+import '@/pages/marta-sunar/styles/main.css'
 
 const Page = () => {
   return (
