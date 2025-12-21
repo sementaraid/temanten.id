@@ -7,7 +7,6 @@ import {
 import { getReleasedRoutes } from '@/routes';
 
 const router = createBrowserRouter(getReleasedRoutes())
-console.log("Released Routes:", getReleasedRoutes());
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <RouterProvider router={router} />

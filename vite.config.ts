@@ -1,8 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
-
-const isProd = process.env.NODE_ENV === 'production'
+import { distVersion } from './app.config'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,4 +14,7 @@ export default defineConfig({
       '@': '/src',
     },
   },
+  build: {
+    outDir: `dist/${distVersion}`
+  }
 })

@@ -1,8 +1,11 @@
 import { Badge } from '@/components/ui/badge'
 import { motion } from 'motion/react'
-import '@/pages/home/styles/main.css'
+import { useNavigate } from 'react-router'
+import '@/pages/not-found/styles/main.css'
 
-export default function App() {
+export default function NotFound() {
+  const navigate = useNavigate()
+
   return (
     <div className="min-h-screen bg-black relative overflow-hidden flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:32px_32px]" />
@@ -11,7 +14,7 @@ export default function App() {
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full"
           style={{
             background:
-              'radial-gradient(circle, rgba(62,207,142,0.15) 0%, transparent 70%)',
+              'radial-gradient(circle, rgba(239,68,68,0.15) 0%, transparent 70%)',
           }}
           animate={{
             scale: [1, 1.1, 1],
@@ -39,9 +42,9 @@ export default function App() {
           >
             <Badge
               variant="outline"
-              className="border-emerald-500/20 bg-emerald-500/10 text-emerald-400 px-3 py-1 backdrop-blur-sm"
+              className="border-red-500/20 bg-red-500/10 text-red-400 px-3 py-1 backdrop-blur-sm"
             >
-              Under Development
+              Page Not Found
             </Badge>
           </motion.div>
 
@@ -52,32 +55,34 @@ export default function App() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="space-y-4"
           >
-            <h1 className="text-5xl md:text-7xl text-white tracking-tight">
-              Temanten<span className="text-emerald-400">.id</span>
+            <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight">
+              <span className="text-red-400">404</span>
             </h1>
             <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
-              Something special is in the works.
+              The page you're looking for doesn't exist.
               <br />
-              <span className="text-slate-500">We'll be ready soon.</span>
+              <span className="text-slate-500">Let's get you back on track.</span>
             </p>
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="pt-4"
+            className="pt-4 flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <div className="inline-flex items-center gap-6 px-6 py-4 rounded-lg border border-slate-800 bg-slate-950/50 backdrop-blur-sm">
-              <div className="flex items-center gap-2">
-                <div className="relative">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full" />
-                  <div className="absolute inset-0 w-2 h-2 bg-emerald-500 rounded-full animate-ping opacity-75" />
-                </div>
-                <span className="text-slate-300 text-sm">Building</span>
-              </div>
-              <div className="w-px h-4 bg-slate-800" />
-              <span className="text-slate-400 text-sm">Coming 2025</span>
-            </div>
+            <button
+              onClick={() => navigate('/')}
+              className="px-8 py-3 rounded-lg border border-emerald-500/50 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-all duration-300 font-medium"
+            >
+              Go Home
+            </button>
+            <button
+              onClick={() => navigate(-1)}
+              className="px-8 py-3 rounded-lg border border-slate-700 bg-slate-900/50 text-slate-300 hover:bg-slate-800/50 transition-all duration-300 font-medium"
+            >
+              Go Back
+            </button>
           </motion.div>
         </motion.div>
       </div>
