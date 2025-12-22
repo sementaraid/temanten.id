@@ -1,0 +1,10 @@
+ignoredBuiltDependencies:
+  - '@prisma/engines'
+  - '@scarf/scarf'
+  - '@swc/core'
+  - bcrypt
+  - better-sqlite3
+  - esbuild
+  - msw
+  - prisma
+  - sqlite3
