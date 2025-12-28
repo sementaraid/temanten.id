@@ -1,22 +1,84 @@
 import { motion } from 'motion/react'
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react'
 import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
+import useSWRMutation from 'swr/mutation'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { postFetcher } from '@/lib/fetcher'
+import { useNavigate } from 'react-router'
+
+const AUTH_SCRIPT_ID = '__auth_script__'
+const loginSchema = z.object({
+  email: z
+    .string()
+    .min(1, 'Email is required')
+    .email('Invalid email address'),
+  password: z
+    .string()
+    .min(6, 'Password must be at least 6 characters'),
+})
+
+type LoginSchema = z.infer<typeof loginSchema>
+type LoginResponse = {
+  message: string,
+  token: string,
+}
 
 export const Login = () => {
+  const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false)
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const { trigger } = useSWRMutation<
+    LoginResponse,
+    Error,
+    string,
+    LoginSchema
+  >(`http://localhost:3000/api/auth/login`, postFetcher())
 
-  const handleSubmit = () => {
-    // Handle login logic here
-    console.log('Login attempt:', { email, password })
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<LoginSchema>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  })
+
+  const onSubmit = async (data: LoginSchema) => {
+    try {
+      const response = await trigger({
+        email: data.email,
+        password: data.password
+      })
+
+      if(!response) throw Error('Failed to attempt login')
+      const existing = document.getElementById(AUTH_SCRIPT_ID)
+      if (existing) {
+        existing.remove()
+      }
+
+      const script = document.createElement('script')
+      script.id = AUTH_SCRIPT_ID
+      script.type = 'text/javascript'
+      script.innerHTML = `window.__AUTH__ = ${JSON.stringify({ 
+        isLoggedIn: true, 
+        user: JSON.parse(atob(response.token.split('.')[1]))})
+      }`
+      document.head.appendChild(script)
+      navigate('/dashboard')
+    }
+    catch (err) {
+      console.log(err)
+    }
   }
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      {/* Login Section */}
       <div className="flex-1 flex items-center justify-center px-6 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,118 +92,88 @@ export const Login = () => {
             <p className="text-gray-500">Sign in to your account to continue</p>
           </div>
 
-          {/* Email Input */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="space-y-2 mb-4"
-          >
-            <label className="block text-sm font-medium text-gray-700">
-              Email Address
-            </label>
-            <div className="relative">
-              <Mail className="absolute left-3 top-2 text-gray-400" size={18} />
-              <Input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com"
-                className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 transition-all"
-                required
-              />
-            </div>
-          </motion.div>
-
-          {/* Password Input */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-2 mb-6"
-          >
-            <div className="flex items-center justify-between">
-              <label className="block text-sm font-medium text-gray-700">
-                Password
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            {/* Email */}
+            <div className="space-y-2">
+              <label className="text-sm font-medium text-gray-700">
+                Email Address
               </label>
-              <a href="#" className="text-sm text-emerald-600 hover:text-emerald-700">
-                Forgot?
-              </a>
+              <div className="relative">
+                <Mail className="absolute left-3 top-2 text-gray-400" size={18} />
+                <Input
+                  type="email"
+                  placeholder="you@example.com"
+                  className="pl-10"
+                  {...register('email')}
+                />
+              </div>
+              {errors.email && (
+                <p className="text-sm text-red-600">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
-            <div className="relative">
-              <Lock className="absolute left-3 top-2 text-gray-400" size={18} />
-              <Input
-                type={showPassword ? 'text' : 'password'}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
-                className="w-full pl-10 pr-10 py-2.5 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 transition-all"
-                required
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-2 text-gray-400 hover:text-gray-600"
-              >
-                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-              </button>
-            </div>
-          </motion.div>
 
-          {/* Submit Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
+            {/* Password */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <label className="text-sm font-medium text-gray-700">
+                  Password
+                </label>
+                <a
+                  href="#"
+                  className="text-sm text-emerald-600 hover:text-emerald-700"
+                >
+                  Forgot?
+                </a>
+              </div>
+
+              <div className="relative">
+                <Lock className="absolute left-3 top-2 text-gray-400" size={18} />
+                <Input
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="••••••••"
+                  className="pl-10 pr-10"
+                  {...register('password')}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-2 text-gray-400 hover:text-gray-600"
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
+              {errors.password && (
+                <p className="text-sm text-red-600">
+                  {errors.password.message}
+                </p>
+              )}
+            </div>
+
+            {/* Submit */}
             <Button
-              className="w-full inline-flex items-center justify-center border-0 gap-2 bg-emerald-600 text-white text-sm rounded-lg hover:bg-emerald-700 transition-colors font-medium"
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-emerald-600 hover:bg-emerald-700"
             >
-              Sign In
+              {isSubmitting ? 'Signing in...' : 'Sign In'}
             </Button>
-          </motion.div>
+          </form>
 
-          {/* Divider */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative my-6"
-          >
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-200"></div>
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-gray-500">Or create new account</span>
-            </div>
-          </motion.div>
-
-          {/* Sign Up Link */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-center text-sm text-gray-600 mt-6"
-          >
+          {/* Footer Links */}
+          <p className="text-center text-sm text-gray-600 mt-6">
             Don't have an account?{' '}
-            <a href="#" className="text-emerald-600 hover:text-emerald-700 font-medium">
+            <a className="text-emerald-600 font-medium" href="#">
               Sign up
             </a>
-          </motion.p>
+          </p>
         </motion.div>
       </div>
 
-      {/* Footer */}
-      <motion.footer
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.7 }}
-        className="border-t border-gray-100 py-6"
-      >
-        <div className="max-w-6xl mx-auto px-6 text-center text-sm text-gray-500">
-          <p>&copy; 2025 Temanten.id. All rights reserved.</p>
-        </div>
-      </motion.footer>
+      <footer className="border-t py-6 text-center text-sm text-gray-500">
+        © 2025 Temanten.id. All rights reserved.
+      </footer>
     </div>
   )
 }

@@ -48,8 +48,8 @@ export class AuthService {
   }
 
   private static generateToken(payload: AuthPayload): string {
-    return jwt.sign(payload, config.jwtConfig.secret, {
-      expiresIn: config.jwtConfig.expire
+    return jwt.sign(payload, config.jwt.secret, {
+      expiresIn: config.jwt.expire
     });
   }
 }

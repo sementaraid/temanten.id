@@ -19,8 +19,15 @@ export const Navbar = () => {
           transition={{ duration: 0.6 }}
           className="flex gap-8 text-sm text-gray-600"
         >
-          <Link to="/sign-in" className="hover:text-gray-900 transition-colors">Sign In</Link>
-          <Link to="/register" className="hover:text-gray-900 transition-colors">Register</Link>
+          {window.__AUTH__.isLoggedIn && (
+            <Link to="/dashboard">Dashboard</Link>
+          )}
+          {!window.__AUTH__.isLoggedIn && (
+            <>
+              <Link to="/sign-in" className="hover:text-gray-900 transition-colors">Sign In</Link>
+              <Link to="/register" className="hover:text-gray-900 transition-colors">Register</Link>
+            </>
+          )}
         </motion.div>
       </div>
     </nav>

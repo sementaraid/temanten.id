@@ -1,11 +1,12 @@
-import { User } from "../prisma/generated/client"
-import { Request } from 'express';
+import { type User } from "../prisma/generated/client"
+import { type Request } from 'express';
 
 type Role = 'admin' | 'user';
 
 export interface IJWTPayload {
   id: string,
   name: string,
+  email: string,
   role: Role,
   iat?: number,
   exp?: number,

@@ -15,13 +15,13 @@ export class AuthController {
 
       const result = await AuthService.login({ email, password });
 
-      res.cookie('token', result.token,{
+      res.cookie('token', result.token, {
         httpOnly: true,
         secure: config.isProduction,
         sameSite: 'strict',
         maxAge: 1000 * 60 * 60 * 24 // 1 day
       })
-      res.status(200).json({ message: 'Login successful', ...result });
+      res.status(200).json({ message: 'Login successful', token: result.token });
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Login failed';
       res.status(401).json({ message });

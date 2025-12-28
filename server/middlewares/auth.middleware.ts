@@ -14,7 +14,7 @@ export const authMiddleware = (req: AuthRequest, res: Response, next: NextFuncti
       throw new AppError('Token tidak ditemukan', 401);
     }
 
-    const decoded = jwt.verify(token, config.jwtConfig.secret);
+    const decoded = jwt.verify(token, config.jwt.secret);
     req.auth = decoded;
 
     next();

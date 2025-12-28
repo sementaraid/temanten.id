@@ -1,11 +1,10 @@
 import { Outlet } from 'react-router'
 import { Button } from '@/components/ui/button'
-import '@/layout/styles/main.css'
 import { Bell } from 'lucide-react'
 import { Sidebar } from './sidebar'
+import '@/layout/styles/main.css'
 
-export const Dashboard = () => {
-
+export const DashboardLayout = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex">
       {/* Sidebar */}

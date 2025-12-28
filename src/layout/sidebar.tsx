@@ -1,17 +1,18 @@
-import { Button } from "@/components/theme/button"
+import { Button, buttonVariants } from "@/components/theme/button"
 import { cn } from "@/lib/utils"
 import { X, Menu, LogOut, BarChart3, Heart, LayoutDashboard, Palette, Settings, Share2, UserCheck, Users, Image } from "lucide-react"
 import { motion } from "motion/react"
 import { useState } from "react"
+import { Link } from "react-router"
 
 export const Sidebar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true)
 
   const adminMenuItems = [
-    { icon: LayoutDashboard, label: 'Dashboard', active: true },
-    { icon: Heart, label: 'Invitations' },
-    { icon: Palette, label: 'Templates' },
-    { icon: Users, label: 'Customers' },
+    { icon: LayoutDashboard, label: 'Dashboard', active: true, href: '/dashboard' },
+    { icon: Heart, label: 'Invitations', href: '/invitations' },
+    { icon: Palette, label: 'Templates', href: '/templates' },
+    { icon: Users, label: 'Customers', href: '/customers' },
     { icon: BarChart3, label: 'Analytics' },
     { icon: Settings, label: 'Settings' },
   ]
@@ -24,6 +25,11 @@ export const Sidebar = () => {
     { icon: Share2, label: 'Share' },
     { icon: Image, label: 'Gallery' },
   ]
+
+  const shouldRenderAdminMenus = window.__AUTH__.user.role === 'admin'
+  const shouldRenderUserMenus = window.__AUTH__.user.role === 'user'
+  
+
   return (
     <motion.div
       animate={{ width: sidebarOpen ? 240 : 80 }}
@@ -54,14 +60,17 @@ export const Sidebar = () => {
 
       {/* Menu Items */}
       <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
-        {adminMenuItems.map((item) => (
+        {shouldRenderAdminMenus && adminMenuItems.map((item) => (
           <motion.div
             key={item.label}
             transition={{ duration: 0.2 }}
           >
-            <Button
-              variant={item.active ? "default" : "ghost"}
+            <Link
+              to={item.href ?? '#'}
               className={cn(
+                buttonVariants({
+                  variant: item.active ? "default" : "ghost"
+                }),
                 "w-full justify-start",
                 sidebarOpen ? "px-4 py-3" : "px-0 py-3 justify-center",
               )}
@@ -78,11 +87,11 @@ export const Sidebar = () => {
               >
                 {item.label}
               </motion.span>
-            </Button>
+            </Link>
           </motion.div>
         ))}
 
-        {customerMenuItems.map((item) => (
+        {shouldRenderUserMenus && customerMenuItems.map((item) => (
           <motion.div
             key={item.label}
             transition={{ duration: 0.2 }}

@@ -6,11 +6,11 @@ import NotFound from "@/pages/not-found"
 import type { RouteObject } from "react-router"
 import { Layout } from "./layout"
 import { Login } from "./pages/login"
-import { Dashboard } from "./layout/dashboard"
+import { DashboardLayout } from "./layout/dashboard"
 
 const routeReleasedByVersion = {
   '1766308273810': {
-    Layout: Layout,
+    Component: Layout,
     children: [
       {
         index: true,
@@ -37,17 +37,21 @@ const routeReleasedByVersion = {
   '1766776338343': {
     children: [
       {
-        path: '/sign-in',
+        path: 'sign-in',
         Component: Login
       }
     ]
   },
   '1766776395591': {
-    Layout: Dashboard,
+    Component: DashboardLayout,
     children: [
       {
         path: 'dashboard',
         Component: () => <>hai</>
+      },
+      {
+        path: 'customers',
+        Component: () => <>customers</>
       }
     ]
   }
@@ -61,11 +65,10 @@ export const getReleasedRoutes = (): RouteObject[] => {
   for (const [versionKey, config] of Object.entries(routeReleasedByVersion)) {
     const versionNum = parseInt(versionKey)
 
-    console.log(versionNum <= currentVersionNum, versionNum, currentVersionNum)
     // If version is <= current dist version, include those routes
     if (versionNum <= currentVersionNum) {
       released.push({
-        ...('Layout' in config && ({ Component: config.Layout })),
+        ...('Component' in config && ({ Component: config.Component })),
         children: config.children.map(child => ({
           ...('index' in child && { index: true }),
           ...('path' in child && { path: child.path }),
