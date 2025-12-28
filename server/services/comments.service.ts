@@ -17,10 +17,10 @@ export class CommentService {
     })
   }
 
-  static async get(id: string){
-    return config.prisma.comments.findUnique({
+  static async get(slug: string){
+    return config.prisma.comments.findMany({
       where: {
-        id: id
+        slug: slug
       }
     })
   }

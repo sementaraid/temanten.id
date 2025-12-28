@@ -3,7 +3,6 @@ import { authGuard, requireLogin } from '../middlewares/page.middleware';
 
 const router = Router();
 
-
 // Sign-in page - with auth guard
 router.get(
   '/sign-in', authGuard, (_req: Request, _res: Response, next: NextFunction) => {

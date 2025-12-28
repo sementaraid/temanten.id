@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 import { ArrowLeft, Home } from 'lucide-react'
-import { Button } from '@/components/theme/button'
+import { Button } from '@/components/ui/button'
 
 export default function NotFound() {
   const handleGoHome = () => window.location.href = '/'
@@ -48,6 +48,7 @@ export default function NotFound() {
             className="flex flex-col sm:flex-row gap-3 justify-center pt-4 items-center"
           >
             <Button
+              variant={"emerald"}
               onClick={handleGoHome}
             >
               <Home size={18} />

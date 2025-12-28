@@ -154,8 +154,9 @@ export const Login = () => {
             {/* Submit */}
             <Button
               type="submit"
+              variant="emerald"
               disabled={isSubmitting}
-              className="w-full bg-emerald-600 hover:bg-emerald-700"
+              className="w-full"
             >
               {isSubmitting ? 'Signing in...' : 'Sign In'}
             </Button>

@@ -9,15 +9,7 @@ export class CommentController {
    */
   static async create(req: Request, res: Response) {
     const input = req.body as Comments
-
-    // 1️⃣ Business logic
     const comment = await CommentService.create(input)
-
-    // 2️⃣ Realtime emit
-    const ws = req.app.get('ws')
-    ws?.emitToInvitation(input.id, comment)
-
-    // 3️⃣ Response
     return res.status(201).json(comment)
   }
 
@@ -25,10 +17,8 @@ export class CommentController {
    * GET /api/comments?invitationId=uuid
    */
   static async list(req: Request, res: Response) {
-    const { invitationId } = req.query as { invitationId: string }
-
-    const comments = await CommentService.get(invitationId)
-
-    return res.json(comments)
+    const { slug } = req.params as { slug: string }
+    const comments = await CommentService.get(slug)
+    return res.json({ message: 'Comments retrieved successfully', results: comments })
   }
 }

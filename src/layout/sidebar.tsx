@@ -1,6 +1,7 @@
-import { Button, buttonVariants } from "@/components/theme/button"
+import { Button, buttonVariants } from "@/components/ui/button"
+import { LogoutDialog } from "@/components/theme/logout"
 import { cn } from "@/lib/utils"
-import { X, Menu, LogOut, BarChart3, Heart, LayoutDashboard, Palette, Settings, Share2, UserCheck, Users, Image } from "lucide-react"
+import { X, Menu, BarChart3, Heart, LayoutDashboard, Palette, Settings, Share2, UserCheck, Users, Image } from "lucide-react"
 import { motion } from "motion/react"
 import { useState } from "react"
 import { Link } from "react-router"
@@ -69,7 +70,7 @@ export const Sidebar = () => {
               to={item.href ?? '#'}
               className={cn(
                 buttonVariants({
-                  variant: item.active ? "default" : "ghost"
+                  variant: item.active ? "emerald" : "ghost"
                 }),
                 "w-full justify-start",
                 sidebarOpen ? "px-4 py-3" : "px-0 py-3 justify-center",
@@ -118,29 +119,8 @@ export const Sidebar = () => {
 
       {/* Logout Button */}
       <div className="p-4 border-t border-gray-200">
-        <motion.div
-          transition={{ duration: 0.2 }}
-        >
-          <Button
-            variant={"ghost"}
-            className={cn(
-              "w-full justify-start",
-              sidebarOpen ? "px-4 py-3" : "px-0 py-3 justify-center",
-            )}
-          >
-            <LogOut size={18} className="flex-shrink-0" />
-            <motion.span
-              animate={{
-                opacity: sidebarOpen ? 1 : 0,
-                width: sidebarOpen ? 'auto' : 0,
-                display: sidebarOpen ? 'block' : 'none'
-              }}
-              transition={{ duration: 0.3 }}
-              className="overflow-hidden whitespace-nowrap"
-            >
-              Logout
-            </motion.span>
-          </Button>
+        <motion.div transition={{ duration: 0.2 }}>
+          <LogoutDialog />
         </motion.div>
       </div>
     </motion.div>

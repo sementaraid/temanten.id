@@ -9,6 +9,7 @@ import { setupDevServer } from './http/dev'
 import { setupProdServer } from './http/prod'
 import authRoutes from './routes/auth.route'
 import pageRoutes from './routes/page.route'
+import commentRoutes from './routes/comments.route'
 
 const app = express()
 
@@ -30,7 +31,7 @@ app.get('/api/health', (_req: Request, res: Response) => {
 // API Routes
 app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(config.swaggerSpec));
 app.use('/api/auth', authRoutes);
-app.use('/api/comments', pageRoutes);
+app.use('/api/comments', commentRoutes);
 
 // Public and private route handler
 app.use('/', pageRoutes);

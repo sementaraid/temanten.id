@@ -27,4 +27,13 @@ export class AuthController {
       res.status(401).json({ message });
     }
   }
+
+  static async logout(_req: AuthRequest, res: Response): Promise<void> {
+    res.clearCookie('token', {
+      httpOnly: true,
+      secure: config.isProduction,
+      sameSite: 'strict'
+    });
+    res.status(200).json({ message: 'Logout successful' });
+  }
 }

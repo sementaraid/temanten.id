@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { Button } from '@/components/theme/button'
+import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
 export default function App() {
@@ -42,7 +42,7 @@ export default function App() {
             placeholder="Enter your email"
             className="w-[300px] border border-gray-200 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-600 transition-colors"
           />
-          <Button>
+          <Button variant="emerald">
             Notify Me
           </Button>
         </motion.div>
