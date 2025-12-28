@@ -26,7 +26,7 @@ export type AggregateInvitation = {
 
 export type InvitationMinAggregateOutputType = {
   id: string | null
-  rev: string | null
+  slug: string | null
   name: string | null
   phone: string | null
   whatsapp: string | null
@@ -38,7 +38,7 @@ export type InvitationMinAggregateOutputType = {
 
 export type InvitationMaxAggregateOutputType = {
   id: string | null
-  rev: string | null
+  slug: string | null
   name: string | null
   phone: string | null
   whatsapp: string | null
@@ -50,7 +50,7 @@ export type InvitationMaxAggregateOutputType = {
 
 export type InvitationCountAggregateOutputType = {
   id: number
-  rev: number
+  slug: number
   name: number
   phone: number
   whatsapp: number
@@ -64,7 +64,7 @@ export type InvitationCountAggregateOutputType = {
 
 export type InvitationMinAggregateInputType = {
   id?: true
-  rev?: true
+  slug?: true
   name?: true
   phone?: true
   whatsapp?: true
@@ -76,7 +76,7 @@ export type InvitationMinAggregateInputType = {
 
 export type InvitationMaxAggregateInputType = {
   id?: true
-  rev?: true
+  slug?: true
   name?: true
   phone?: true
   whatsapp?: true
@@ -88,7 +88,7 @@ export type InvitationMaxAggregateInputType = {
 
 export type InvitationCountAggregateInputType = {
   id?: true
-  rev?: true
+  slug?: true
   name?: true
   phone?: true
   whatsapp?: true
@@ -173,7 +173,7 @@ export type InvitationGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inter
 
 export type InvitationGroupByOutputType = {
   id: string
-  rev: string
+  slug: string
   name: string
   phone: string
   whatsapp: string
@@ -206,7 +206,7 @@ export type InvitationWhereInput = {
   OR?: Prisma.InvitationWhereInput[]
   NOT?: Prisma.InvitationWhereInput | Prisma.InvitationWhereInput[]
   id?: Prisma.StringFilter<"Invitation"> | string
-  rev?: Prisma.StringFilter<"Invitation"> | string
+  slug?: Prisma.StringFilter<"Invitation"> | string
   name?: Prisma.StringFilter<"Invitation"> | string
   phone?: Prisma.StringFilter<"Invitation"> | string
   whatsapp?: Prisma.StringFilter<"Invitation"> | string
@@ -218,7 +218,7 @@ export type InvitationWhereInput = {
 
 export type InvitationOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  rev?: Prisma.SortOrder
+  slug?: Prisma.SortOrder
   name?: Prisma.SortOrder
   phone?: Prisma.SortOrder
   whatsapp?: Prisma.SortOrder
@@ -233,7 +233,7 @@ export type InvitationWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.InvitationWhereInput | Prisma.InvitationWhereInput[]
   OR?: Prisma.InvitationWhereInput[]
   NOT?: Prisma.InvitationWhereInput | Prisma.InvitationWhereInput[]
-  rev?: Prisma.StringFilter<"Invitation"> | string
+  slug?: Prisma.StringFilter<"Invitation"> | string
   name?: Prisma.StringFilter<"Invitation"> | string
   phone?: Prisma.StringFilter<"Invitation"> | string
   whatsapp?: Prisma.StringFilter<"Invitation"> | string
@@ -245,7 +245,7 @@ export type InvitationWhereUniqueInput = Prisma.AtLeast<{
 
 export type InvitationOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  rev?: Prisma.SortOrder
+  slug?: Prisma.SortOrder
   name?: Prisma.SortOrder
   phone?: Prisma.SortOrder
   whatsapp?: Prisma.SortOrder
@@ -263,7 +263,7 @@ export type InvitationScalarWhereWithAggregatesInput = {
   OR?: Prisma.InvitationScalarWhereWithAggregatesInput[]
   NOT?: Prisma.InvitationScalarWhereWithAggregatesInput | Prisma.InvitationScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
-  rev?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
+  slug?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
   name?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
   phone?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
   whatsapp?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
@@ -275,7 +275,7 @@ export type InvitationScalarWhereWithAggregatesInput = {
 
 export type InvitationCreateInput = {
   id?: string
-  rev: string
+  slug: string
   name: string
   phone: string
   whatsapp: string
@@ -287,7 +287,7 @@ export type InvitationCreateInput = {
 
 export type InvitationUncheckedCreateInput = {
   id?: string
-  rev: string
+  slug: string
   name: string
   phone: string
   whatsapp: string
@@ -299,7 +299,7 @@ export type InvitationUncheckedCreateInput = {
 
 export type InvitationUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rev?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   whatsapp?: Prisma.StringFieldUpdateOperationsInput | string
@@ -311,7 +311,7 @@ export type InvitationUpdateInput = {
 
 export type InvitationUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rev?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   whatsapp?: Prisma.StringFieldUpdateOperationsInput | string
@@ -323,7 +323,7 @@ export type InvitationUncheckedUpdateInput = {
 
 export type InvitationCreateManyInput = {
   id?: string
-  rev: string
+  slug: string
   name: string
   phone: string
   whatsapp: string
@@ -335,7 +335,7 @@ export type InvitationCreateManyInput = {
 
 export type InvitationUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rev?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   whatsapp?: Prisma.StringFieldUpdateOperationsInput | string
@@ -347,7 +347,7 @@ export type InvitationUpdateManyMutationInput = {
 
 export type InvitationUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rev?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   whatsapp?: Prisma.StringFieldUpdateOperationsInput | string
@@ -359,7 +359,7 @@ export type InvitationUncheckedUpdateManyInput = {
 
 export type InvitationCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  rev?: Prisma.SortOrder
+  slug?: Prisma.SortOrder
   name?: Prisma.SortOrder
   phone?: Prisma.SortOrder
   whatsapp?: Prisma.SortOrder
@@ -371,7 +371,7 @@ export type InvitationCountOrderByAggregateInput = {
 
 export type InvitationMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  rev?: Prisma.SortOrder
+  slug?: Prisma.SortOrder
   name?: Prisma.SortOrder
   phone?: Prisma.SortOrder
   whatsapp?: Prisma.SortOrder
@@ -383,7 +383,7 @@ export type InvitationMaxOrderByAggregateInput = {
 
 export type InvitationMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  rev?: Prisma.SortOrder
+  slug?: Prisma.SortOrder
   name?: Prisma.SortOrder
   phone?: Prisma.SortOrder
   whatsapp?: Prisma.SortOrder
@@ -397,7 +397,7 @@ export type InvitationMinOrderByAggregateInput = {
 
 export type InvitationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  rev?: boolean
+  slug?: boolean
   name?: boolean
   phone?: boolean
   whatsapp?: boolean
@@ -409,7 +409,7 @@ export type InvitationSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
 
 export type InvitationSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  rev?: boolean
+  slug?: boolean
   name?: boolean
   phone?: boolean
   whatsapp?: boolean
@@ -421,7 +421,7 @@ export type InvitationSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
 
 export type InvitationSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  rev?: boolean
+  slug?: boolean
   name?: boolean
   phone?: boolean
   whatsapp?: boolean
@@ -433,7 +433,7 @@ export type InvitationSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
 
 export type InvitationSelectScalar = {
   id?: boolean
-  rev?: boolean
+  slug?: boolean
   name?: boolean
   phone?: boolean
   whatsapp?: boolean
@@ -443,14 +443,14 @@ export type InvitationSelectScalar = {
   updatedAt?: boolean
 }
 
-export type InvitationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "rev" | "name" | "phone" | "whatsapp" | "message" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["invitation"]>
+export type InvitationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "name" | "phone" | "whatsapp" | "message" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["invitation"]>
 
 export type $InvitationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Invitation"
   objects: {}
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    rev: string
+    slug: string
     name: string
     phone: string
     whatsapp: string
@@ -882,7 +882,7 @@ export interface Prisma__InvitationClient<T, Null = never, ExtArgs extends runti
  */
 export interface InvitationFieldRefs {
   readonly id: Prisma.FieldRef<"Invitation", 'String'>
-  readonly rev: Prisma.FieldRef<"Invitation", 'String'>
+  readonly slug: Prisma.FieldRef<"Invitation", 'String'>
   readonly name: Prisma.FieldRef<"Invitation", 'String'>
   readonly phone: Prisma.FieldRef<"Invitation", 'String'>
   readonly whatsapp: Prisma.FieldRef<"Invitation", 'String'>

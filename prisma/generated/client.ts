@@ -59,3 +59,8 @@ export type Invitation = Prisma.InvitationModel
  * 
  */
 export type Comments = Prisma.CommentsModel
+/**
+ * Model Session
+ * 
+ */
+export type Session = Prisma.SessionModel

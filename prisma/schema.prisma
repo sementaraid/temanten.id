@@ -32,7 +32,7 @@ model User {
 
 model Invitation {
   id          String    @id @default(cuid())
-  rev         String
+  slug        String
   name        String
   phone       String
   whatsapp    String
@@ -44,7 +44,7 @@ model Invitation {
 
 model Comments {
   id            String    @id @default(cuid())
-  rev           String
+  slug          String
   name          String
   message       String
   confirmation  String

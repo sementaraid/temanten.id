@@ -30,10 +30,9 @@ app.get('/api/health', (_req: Request, res: Response) => {
 // API Routes
 app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(config.swaggerSpec));
 app.use('/api/auth', authRoutes);
-
+app.use('/api/comments', pageRoutes);
 
 // Public and private route handler
-app.use('/api/auth', authRoutes);
 app.use('/', pageRoutes);
 
 if (!config.isProduction) {

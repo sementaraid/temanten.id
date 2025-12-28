@@ -1,7 +1,7 @@
 import { distVersion } from "../app.config"
 
 import Home from '@/pages/home'
-import MartaSunar from '@/pages/marta-sunar'
+import MartaSunar from '@/releases/marta-sunar'
 import NotFound from "@/pages/not-found"
 import type { RouteObject } from "react-router"
 import { Layout } from "./layout"

@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { z } from 'zod';
 import { AuthController } from '../controllers/auth.controller';
+import { validateRequest } from '../utils/validate';
 
 const router = Router();
 const loginSchema = z.object({
@@ -14,33 +15,14 @@ const loginSchema = z.object({
     .min(6, 'Password must be at least 6 characters'),
 });
 
-const validateRequest = (schema: z.ZodSchema) => {
-  return (req, res, next) => {
-    try {
-      const validated = schema.parse(req.body);
-      req.body = validated;
-      next();
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        const messages = JSON.parse(error.message).map((err) => err.message);
-
-        return res.status(400).json({
-          error: 'Validation error',
-          issues: messages,
-        });
-      }
-      next(error);
-    }
-  };
-};
 
 /**
  * @swagger
- * /api/auth/login:
+ * /api/auth:
  *   post:
  *     tags:
  *       - Authentication
- *     summary: Login pengguna
+ *     summary: Authenticate the user
  *     requestBody:
  *       required: true
  *       content:
@@ -57,8 +39,8 @@ const validateRequest = (schema: z.ZodSchema) => {
  *         description: Login berhasil
  */
 router.post(
-  '/login', 
-  validateRequest(loginSchema), 
+  '/', 
+  validateRequest(loginSchema, 'body'), 
   AuthController.login
 );
 

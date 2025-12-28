@@ -54,7 +54,8 @@ export const ModelName = {
   Version: 'Version',
   User: 'User',
   Invitation: 'Invitation',
-  Comments: 'Comments'
+  Comments: 'Comments',
+  Session: 'Session'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -95,7 +96,7 @@ export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof User
 
 export const InvitationScalarFieldEnum = {
   id: 'id',
-  rev: 'rev',
+  slug: 'slug',
   name: 'name',
   phone: 'phone',
   whatsapp: 'whatsapp',
@@ -110,7 +111,7 @@ export type InvitationScalarFieldEnum = (typeof InvitationScalarFieldEnum)[keyof
 
 export const CommentsScalarFieldEnum = {
   id: 'id',
-  rev: 'rev',
+  slug: 'slug',
   name: 'name',
   message: 'message',
   confirmation: 'confirmation',
@@ -119,6 +120,17 @@ export const CommentsScalarFieldEnum = {
 } as const
 
 export type CommentsScalarFieldEnum = (typeof CommentsScalarFieldEnum)[keyof typeof CommentsScalarFieldEnum]
+
+
+export const SessionScalarFieldEnum = {
+  sid: 'sid',
+  data: 'data',
+  expiresAt: 'expiresAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SessionScalarFieldEnum = (typeof SessionScalarFieldEnum)[keyof typeof SessionScalarFieldEnum]
 
 
 export const SortOrder = {

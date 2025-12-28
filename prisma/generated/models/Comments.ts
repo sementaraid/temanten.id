@@ -26,7 +26,7 @@ export type AggregateComments = {
 
 export type CommentsMinAggregateOutputType = {
   id: string | null
-  rev: string | null
+  slug: string | null
   name: string | null
   message: string | null
   confirmation: string | null
@@ -36,7 +36,7 @@ export type CommentsMinAggregateOutputType = {
 
 export type CommentsMaxAggregateOutputType = {
   id: string | null
-  rev: string | null
+  slug: string | null
   name: string | null
   message: string | null
   confirmation: string | null
@@ -46,7 +46,7 @@ export type CommentsMaxAggregateOutputType = {
 
 export type CommentsCountAggregateOutputType = {
   id: number
-  rev: number
+  slug: number
   name: number
   message: number
   confirmation: number
@@ -58,7 +58,7 @@ export type CommentsCountAggregateOutputType = {
 
 export type CommentsMinAggregateInputType = {
   id?: true
-  rev?: true
+  slug?: true
   name?: true
   message?: true
   confirmation?: true
@@ -68,7 +68,7 @@ export type CommentsMinAggregateInputType = {
 
 export type CommentsMaxAggregateInputType = {
   id?: true
-  rev?: true
+  slug?: true
   name?: true
   message?: true
   confirmation?: true
@@ -78,7 +78,7 @@ export type CommentsMaxAggregateInputType = {
 
 export type CommentsCountAggregateInputType = {
   id?: true
-  rev?: true
+  slug?: true
   name?: true
   message?: true
   confirmation?: true
@@ -161,7 +161,7 @@ export type CommentsGroupByArgs<ExtArgs extends runtime.Types.Extensions.Interna
 
 export type CommentsGroupByOutputType = {
   id: string
-  rev: string
+  slug: string
   name: string
   message: string
   confirmation: string
@@ -192,7 +192,7 @@ export type CommentsWhereInput = {
   OR?: Prisma.CommentsWhereInput[]
   NOT?: Prisma.CommentsWhereInput | Prisma.CommentsWhereInput[]
   id?: Prisma.StringFilter<"Comments"> | string
-  rev?: Prisma.StringFilter<"Comments"> | string
+  slug?: Prisma.StringFilter<"Comments"> | string
   name?: Prisma.StringFilter<"Comments"> | string
   message?: Prisma.StringFilter<"Comments"> | string
   confirmation?: Prisma.StringFilter<"Comments"> | string
@@ -202,7 +202,7 @@ export type CommentsWhereInput = {
 
 export type CommentsOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  rev?: Prisma.SortOrder
+  slug?: Prisma.SortOrder
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   confirmation?: Prisma.SortOrder
@@ -215,7 +215,7 @@ export type CommentsWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.CommentsWhereInput | Prisma.CommentsWhereInput[]
   OR?: Prisma.CommentsWhereInput[]
   NOT?: Prisma.CommentsWhereInput | Prisma.CommentsWhereInput[]
-  rev?: Prisma.StringFilter<"Comments"> | string
+  slug?: Prisma.StringFilter<"Comments"> | string
   name?: Prisma.StringFilter<"Comments"> | string
   message?: Prisma.StringFilter<"Comments"> | string
   confirmation?: Prisma.StringFilter<"Comments"> | string
@@ -225,7 +225,7 @@ export type CommentsWhereUniqueInput = Prisma.AtLeast<{
 
 export type CommentsOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  rev?: Prisma.SortOrder
+  slug?: Prisma.SortOrder
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   confirmation?: Prisma.SortOrder
@@ -241,7 +241,7 @@ export type CommentsScalarWhereWithAggregatesInput = {
   OR?: Prisma.CommentsScalarWhereWithAggregatesInput[]
   NOT?: Prisma.CommentsScalarWhereWithAggregatesInput | Prisma.CommentsScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Comments"> | string
-  rev?: Prisma.StringWithAggregatesFilter<"Comments"> | string
+  slug?: Prisma.StringWithAggregatesFilter<"Comments"> | string
   name?: Prisma.StringWithAggregatesFilter<"Comments"> | string
   message?: Prisma.StringWithAggregatesFilter<"Comments"> | string
   confirmation?: Prisma.StringWithAggregatesFilter<"Comments"> | string
@@ -251,7 +251,7 @@ export type CommentsScalarWhereWithAggregatesInput = {
 
 export type CommentsCreateInput = {
   id?: string
-  rev: string
+  slug: string
   name: string
   message: string
   confirmation: string
@@ -261,7 +261,7 @@ export type CommentsCreateInput = {
 
 export type CommentsUncheckedCreateInput = {
   id?: string
-  rev: string
+  slug: string
   name: string
   message: string
   confirmation: string
@@ -271,7 +271,7 @@ export type CommentsUncheckedCreateInput = {
 
 export type CommentsUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rev?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   confirmation?: Prisma.StringFieldUpdateOperationsInput | string
@@ -281,7 +281,7 @@ export type CommentsUpdateInput = {
 
 export type CommentsUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rev?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   confirmation?: Prisma.StringFieldUpdateOperationsInput | string
@@ -291,7 +291,7 @@ export type CommentsUncheckedUpdateInput = {
 
 export type CommentsCreateManyInput = {
   id?: string
-  rev: string
+  slug: string
   name: string
   message: string
   confirmation: string
@@ -301,7 +301,7 @@ export type CommentsCreateManyInput = {
 
 export type CommentsUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rev?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   confirmation?: Prisma.StringFieldUpdateOperationsInput | string
@@ -311,7 +311,7 @@ export type CommentsUpdateManyMutationInput = {
 
 export type CommentsUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rev?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   confirmation?: Prisma.StringFieldUpdateOperationsInput | string
@@ -321,7 +321,7 @@ export type CommentsUncheckedUpdateManyInput = {
 
 export type CommentsCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  rev?: Prisma.SortOrder
+  slug?: Prisma.SortOrder
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   confirmation?: Prisma.SortOrder
@@ -331,7 +331,7 @@ export type CommentsCountOrderByAggregateInput = {
 
 export type CommentsMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  rev?: Prisma.SortOrder
+  slug?: Prisma.SortOrder
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   confirmation?: Prisma.SortOrder
@@ -341,7 +341,7 @@ export type CommentsMaxOrderByAggregateInput = {
 
 export type CommentsMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  rev?: Prisma.SortOrder
+  slug?: Prisma.SortOrder
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   confirmation?: Prisma.SortOrder
@@ -353,7 +353,7 @@ export type CommentsMinOrderByAggregateInput = {
 
 export type CommentsSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  rev?: boolean
+  slug?: boolean
   name?: boolean
   message?: boolean
   confirmation?: boolean
@@ -363,7 +363,7 @@ export type CommentsSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
 
 export type CommentsSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  rev?: boolean
+  slug?: boolean
   name?: boolean
   message?: boolean
   confirmation?: boolean
@@ -373,7 +373,7 @@ export type CommentsSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
 
 export type CommentsSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  rev?: boolean
+  slug?: boolean
   name?: boolean
   message?: boolean
   confirmation?: boolean
@@ -383,7 +383,7 @@ export type CommentsSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
 
 export type CommentsSelectScalar = {
   id?: boolean
-  rev?: boolean
+  slug?: boolean
   name?: boolean
   message?: boolean
   confirmation?: boolean
@@ -391,14 +391,14 @@ export type CommentsSelectScalar = {
   updatedAt?: boolean
 }
 
-export type CommentsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "rev" | "name" | "message" | "confirmation" | "createdAt" | "updatedAt", ExtArgs["result"]["comments"]>
+export type CommentsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "name" | "message" | "confirmation" | "createdAt" | "updatedAt", ExtArgs["result"]["comments"]>
 
 export type $CommentsPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Comments"
   objects: {}
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    rev: string
+    slug: string
     name: string
     message: string
     confirmation: string
@@ -828,7 +828,7 @@ export interface Prisma__CommentsClient<T, Null = never, ExtArgs extends runtime
  */
 export interface CommentsFieldRefs {
   readonly id: Prisma.FieldRef<"Comments", 'String'>
-  readonly rev: Prisma.FieldRef<"Comments", 'String'>
+  readonly slug: Prisma.FieldRef<"Comments", 'String'>
   readonly name: Prisma.FieldRef<"Comments", 'String'>
   readonly message: Prisma.FieldRef<"Comments", 'String'>
   readonly confirmation: Prisma.FieldRef<"Comments", 'String'>
