@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found"
 import type { RouteObject } from "react-router"
 import { Layout } from "./layout"
 import { Login } from "./pages/login"
+import { Register } from "./pages/register"
 import { DashboardLayout } from "./layout/dashboard"
 
 const routeReleasedByVersion = {
@@ -39,6 +40,10 @@ const routeReleasedByVersion = {
       {
         path: 'sign-in',
         Component: Login
+      },
+      {
+        path: 'sign-up',
+        Component: Register
       }
     ]
   },

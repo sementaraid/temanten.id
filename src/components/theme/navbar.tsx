@@ -25,7 +25,7 @@ export const Navbar = () => {
           {!window.__AUTH__.isLoggedIn && (
             <>
               <Link to="/sign-in" className="hover:text-gray-900 transition-colors">Sign In</Link>
-              <Link to="/register" className="hover:text-gray-900 transition-colors">Register</Link>
+              <Link to="/sign-up" className="hover:text-gray-900 transition-colors">Sign Up</Link>
             </>
           )}
         </motion.div>
