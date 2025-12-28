@@ -1,94 +1,80 @@
-import { Badge } from '@/components/ui/badge'
 import { motion } from 'motion/react'
-import { useNavigate } from 'react-router'
-import '@/pages/not-found/styles/main.css'
+import { ArrowLeft, Home } from 'lucide-react'
+import { Button } from '@/components/theme/button'
 
 export default function NotFound() {
-  const navigate = useNavigate()
+  const handleGoHome = () => window.location.href = '/'
+  const handleGoBack = () => window.history.back()
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:32px_32px]" />
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full"
-          style={{
-            background:
-              'radial-gradient(circle, rgba(239,68,68,0.15) 0%, transparent 70%)',
-          }}
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-      </div>
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:64px_64px]" />
-      <div className="relative z-10 max-w-3xl w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center space-y-6"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-          >
-            <Badge
-              variant="outline"
-              className="border-red-500/20 bg-red-500/10 text-red-400 px-3 py-1 backdrop-blur-sm"
-            >
-              Page Not Found
-            </Badge>
-          </motion.div>
-
-          {/* Main heading */}
+    <div className="min-h-screen bg-white flex flex-col">
+      {/* Hero Section */}
+      <div className="flex-1 flex items-center justify-center px-6">
+        <div className="max-w-3xl w-full text-center space-y-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
             className="space-y-4"
           >
-            <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight">
-              <span className="text-red-400">404</span>
+            <div className="inline-block">
+              <span className="text-sm font-medium text-red-600 border border-red-200 bg-red-50 px-4 py-2 rounded-full">
+                Page Not Found
+              </span>
+            </div>
+            <h1 className="text-8xl md:text-9xl font-bold text-gray-900">
+              <span className="text-red-600">404</span>
             </h1>
-            <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-3"
+          >
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               The page you're looking for doesn't exist.
-              <br />
-              <span className="text-slate-500">Let's get you back on track.</span>
+            </p>
+            <p className="text-gray-500">
+              Let's get you back on track.
             </p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="pt-4 flex flex-col sm:flex-row gap-4 justify-center"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-3 justify-center pt-4 items-center"
           >
-            <button
-              onClick={() => navigate('/')}
-              className="px-8 py-3 rounded-lg border border-emerald-500/50 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-all duration-300 font-medium"
+            <Button
+              onClick={handleGoHome}
             >
+              <Home size={18} />
               Go Home
-            </button>
-            <button
-              onClick={() => navigate(-1)}
-              className="px-8 py-3 rounded-lg border border-slate-700 bg-slate-900/50 text-slate-300 hover:bg-slate-800/50 transition-all duration-300 font-medium"
+            </Button>
+            <Button 
+              variant={'outline'}
+              onClick={handleGoBack}
             >
+              <ArrowLeft size={18} />
               Go Back
-            </button>
+            </Button>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
+      {/* Footer */}
+      <motion.footer
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="border-t border-gray-100 py-8"
+      >
+        <div className="max-w-6xl mx-auto px-6 text-center text-sm text-gray-500">
+          <p>&copy; 2025 Temanten.id. All rights reserved.</p>
+        </div>
+      </motion.footer>
     </div>
   )
 }

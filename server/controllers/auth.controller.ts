@@ -1,6 +1,7 @@
 import { Response } from 'express';
 import { AuthService } from '../services/auth.service';
 import { AuthRequest, LoginRequest } from '../../types';
+import config from '../config';
 
 export class AuthController {
   static async login(req: AuthRequest, res: Response): Promise<void> {
@@ -13,6 +14,13 @@ export class AuthController {
       }
 
       const result = await AuthService.login({ email, password });
+
+      res.cookie('token', result.token,{
+        httpOnly: true,
+        secure: config.isProduction,
+        sameSite: 'strict',
+        maxAge: 1000 * 60 * 60 * 24 // 1 day
+      })
       res.status(200).json({ message: 'Login successful', ...result });
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Login failed';

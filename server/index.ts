@@ -9,9 +9,8 @@ import { setupProdServer } from './http/prod'
 import authRoutes from './routes/auth.route'
 
 const app = express()
-const isProd = process.env.NODE_ENV === 'production'
 
-const PORT = isProd ? 3001 : 3000
+const PORT = config.isProduction ? 3001 : 3000
 
 // Middleware
 app.set('strict routing', false);
@@ -28,7 +27,8 @@ app.get('/api/health', (_req: Request, res: Response) => {
 app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(config.swaggerSpec));
 app.use('/api/auth', authRoutes);
 
-if (!isProd) {
+console.log('Environment:', config.isProduction ? 'Production' : 'Development');
+if (!config.isProduction) {
   setupDevServer(app)
 } else {
   setupProdServer(app)

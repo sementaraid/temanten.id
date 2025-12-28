@@ -21,7 +21,11 @@ class Config {
 
   readonly swaggerSpec: ReturnType<typeof swaggerJsDoc>;
 
+  readonly isProduction: boolean;
+
   private constructor() {
+    this.isProduction = process.env.NODE_ENV === 'production'
+
     // JWT Configuration
     this.jwtConfig = {
       secret: process.env.JWT_SECRET || 'your-secret-key',
