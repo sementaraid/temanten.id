@@ -8,7 +8,7 @@ import useSWRMutation from 'swr/mutation'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { postFetcher } from '@/lib/fetcher'
-import { useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 
 const AUTH_SCRIPT_ID = '__auth_script__'
 const registerSchema = z.object({
@@ -295,9 +295,9 @@ export const Register = () => {
           {/* Footer Links */}
           <p className="text-center text-sm text-gray-600 mt-6">
             Already have an account?{' '}
-            <a className="text-emerald-600 font-medium" href="#">
+            <Link className="text-emerald-600 font-medium" to="/sign-in">
               Sign in
-            </a>
+            </Link>
           </p>
         </motion.div>
       </div>
