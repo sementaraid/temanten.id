@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
-import { distVersion } from './app.config'
+import path from 'path'
+import { distVersion } from './app.config.ts'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -11,7 +12,9 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': '/src',
+      '@': path.resolve(process.cwd(), 'src'),
+      '@server': path.resolve(process.cwd(), 'server'),
+      '@shared': path.resolve(process.cwd(), 'shared'),
     },
   },
   build: {

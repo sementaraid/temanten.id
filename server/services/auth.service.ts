@@ -2,8 +2,8 @@
 
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-import config from '../config';
-import { LoginRequest, UserResponse } from '../../types';
+import config from '@server/config';
+import type { LoginRequest, UserResponse } from '@shared/types';
 
 interface AuthPayload {
   id: string;
@@ -49,7 +49,7 @@ export class AuthService {
 
   private static generateToken(payload: AuthPayload): string {
     return jwt.sign(payload, config.jwt.secret, {
-      expiresIn: config.jwt.expire
+      expiresIn: config.jwt.expiresIn
     });
   }
 }

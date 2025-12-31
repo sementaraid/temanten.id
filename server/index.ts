@@ -1,15 +1,17 @@
-import express, { Request, Response } from 'express'
+import express, { type Request, type Response } from 'express'
 import swaggerUI from 'swagger-ui-express'
 import cors from 'cors';
 import cookieParser from 'cookie-parser'
 import morgan from 'morgan';
 
-import config from './config';
-import { setupDevServer } from './http/dev'
-import { setupProdServer } from './http/prod'
-import authRoutes from './routes/auth.route'
-import pageRoutes from './routes/page.route'
-import commentRoutes from './routes/comments.route'
+import config from '@server/config';
+import { setupDevServer } from '@server/http/dev'
+import { setupProdServer } from '@server/http/prod'
+import authRoutes from '@server/routes/auth.route'
+import invitationRoutes from '@server/routes/invitation.route'
+import pageRoutes from '@server/routes/page.route'
+import guestResponseRoutes from '@server/routes/guest-response.route'
+import guestListRoutes from '@server/routes/guest-list.route'
 
 const app = express()
 
@@ -31,7 +33,9 @@ app.get('/api/health', (_req: Request, res: Response) => {
 // API Routes
 app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(config.swaggerSpec));
 app.use('/api/auth', authRoutes);
-app.use('/api/comments', commentRoutes);
+app.use('/api/invitation', invitationRoutes);
+app.use('/api/guest-responses', guestResponseRoutes);
+app.use('/api/guest-list', guestListRoutes);
 
 // Public and private route handler
 app.use('/', pageRoutes);

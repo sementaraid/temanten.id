@@ -1,42 +1,38 @@
 import { Router } from 'express';
-import { z } from 'zod';
-import { AuthController } from '../controllers/auth.controller';
-import { validateRequest } from '../utils/validate';
+import { createSessionSchema } from '@shared/schema'
+import { AuthController } from '@server/controllers/auth.controller';
+import { RequestValidator } from '@server/utils/validate';
 
 const router = Router();
-const loginSchema = z.object({
-  email: z
-    .string({ error: 'Email is required' })
-    .email('Invalid email format')
-    .trim()
-    .toLowerCase(),
-  password: z
-    .string({ error: 'Password is required' })
-    .min(6, 'Password must be at least 6 characters'),
-});
-
 
 /**
- * @swagger
- * /api/auth/login:
+ * @openapi
+ * /api/auth/sign-in:
  *   post:
  *     tags:
- *       - Authentication
- *     summary: Authenticate the user
+ *       - Auth
+ *     summary: Sign in user
+ *     description: Authenticate user and create a session
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
  *             type: object
+ *             required:
+ *               - email
+ *               - password
  *             properties:
  *               email:
  *                 type: string
+ *                 format: email
+ *                 example: user@email.com
  *               password:
  *                 type: string
+ *                 example: secret123
  *     responses:
  *       200:
- *         description: User authenticated successfully
+ *         description: Login successful
  *         content:
  *           application/json:
  *             schema:
@@ -44,63 +40,41 @@ const loginSchema = z.object({
  *               properties:
  *                 success:
  *                   type: boolean
- *                 message:
- *                   type: string
- *                 data:
+ *                   example: true
+ *                 user:
  *                   type: object
  *                   properties:
- *                     user:
- *                       type: object
- *                       properties:
- *                         id:
- *                           type: string
- *                         email:
- *                           type: string
- *                         role:
- *                           type: string
- *                     token:
+ *                     id:
  *                       type: string
+ *                       example: "uuid"
+ *                     email:
+ *                       type: string
+ *                       example: user@email.com
  *       400:
- *         description: Invalid request data
+ *         description: Validation error
  *       401:
- *         description: Invalid email or password
- *       500:
- *         description: Internal server error
+ *         description: Invalid credentials
  */
 router.post(
-  '/login', 
-  validateRequest(loginSchema, 'body'), 
+  '/sign-in',
+  RequestValidator.validate(createSessionSchema, 'body'),
   AuthController.login
 );
 
 /**
- * @swagger
- * /api/auth/logout:
+ * @openapi
+ * /api/auth/sign-out:
  *   post:
  *     tags:
- *       - Authentication
- *     summary: Logout the authenticated user
- *     security:
- *       - bearerAuth: []
+ *       - Auth
+ *     summary: Sign out user
+ *     description: Destroy user session
  *     responses:
  *       200:
- *         description: User logged out successfully
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 success:
- *                   type: boolean
- *                 message:
- *                   type: string
- *       401:
- *         description: Unauthorized - No valid token provided
- *       500:
- *         description: Internal server error
+ *         description: Logout successful
  */
 router.post(
-  '/logout', 
+  '/sign-out',
   AuthController.logout
 );
 

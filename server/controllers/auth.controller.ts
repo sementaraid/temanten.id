@@ -1,7 +1,7 @@
-import { Response } from 'express';
-import { AuthService } from '../services/auth.service';
-import { AuthRequest, LoginRequest } from '../../types';
-import config from '../config';
+import { type Response } from 'express';
+import { AuthService } from '@server/services/auth.service';
+import { type AuthRequest, type LoginRequest } from '@shared/types';
+import config from '@server/config';
 
 export class AuthController {
   static async login(req: AuthRequest, res: Response): Promise<void> {

@@ -387,8 +387,8 @@ export const ModelName = {
   Version: 'Version',
   User: 'User',
   Invitation: 'Invitation',
-  Comments: 'Comments',
-  Session: 'Session'
+  GuestList: 'GuestList',
+  GuestResponses: 'GuestResponses'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -404,7 +404,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "version" | "user" | "invitation" | "comments" | "session"
+    modelProps: "version" | "user" | "invitation" | "guestList" | "guestResponses"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -630,151 +630,151 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    Comments: {
-      payload: Prisma.$CommentsPayload<ExtArgs>
-      fields: Prisma.CommentsFieldRefs
+    GuestList: {
+      payload: Prisma.$GuestListPayload<ExtArgs>
+      fields: Prisma.GuestListFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.CommentsFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CommentsPayload> | null
+          args: Prisma.GuestListFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestListPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.CommentsFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CommentsPayload>
+          args: Prisma.GuestListFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestListPayload>
         }
         findFirst: {
-          args: Prisma.CommentsFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CommentsPayload> | null
+          args: Prisma.GuestListFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestListPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.CommentsFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CommentsPayload>
+          args: Prisma.GuestListFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestListPayload>
         }
         findMany: {
-          args: Prisma.CommentsFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CommentsPayload>[]
+          args: Prisma.GuestListFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestListPayload>[]
         }
         create: {
-          args: Prisma.CommentsCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CommentsPayload>
+          args: Prisma.GuestListCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestListPayload>
         }
         createMany: {
-          args: Prisma.CommentsCreateManyArgs<ExtArgs>
+          args: Prisma.GuestListCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         createManyAndReturn: {
-          args: Prisma.CommentsCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CommentsPayload>[]
+          args: Prisma.GuestListCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestListPayload>[]
         }
         delete: {
-          args: Prisma.CommentsDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CommentsPayload>
+          args: Prisma.GuestListDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestListPayload>
         }
         update: {
-          args: Prisma.CommentsUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CommentsPayload>
+          args: Prisma.GuestListUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestListPayload>
         }
         deleteMany: {
-          args: Prisma.CommentsDeleteManyArgs<ExtArgs>
+          args: Prisma.GuestListDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.CommentsUpdateManyArgs<ExtArgs>
+          args: Prisma.GuestListUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateManyAndReturn: {
-          args: Prisma.CommentsUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CommentsPayload>[]
+          args: Prisma.GuestListUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestListPayload>[]
         }
         upsert: {
-          args: Prisma.CommentsUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CommentsPayload>
+          args: Prisma.GuestListUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestListPayload>
         }
         aggregate: {
-          args: Prisma.CommentsAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateComments>
+          args: Prisma.GuestListAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateGuestList>
         }
         groupBy: {
-          args: Prisma.CommentsGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.CommentsGroupByOutputType>[]
+          args: Prisma.GuestListGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.GuestListGroupByOutputType>[]
         }
         count: {
-          args: Prisma.CommentsCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.CommentsCountAggregateOutputType> | number
+          args: Prisma.GuestListCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.GuestListCountAggregateOutputType> | number
         }
       }
     }
-    Session: {
-      payload: Prisma.$SessionPayload<ExtArgs>
-      fields: Prisma.SessionFieldRefs
+    GuestResponses: {
+      payload: Prisma.$GuestResponsesPayload<ExtArgs>
+      fields: Prisma.GuestResponsesFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.SessionFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SessionPayload> | null
+          args: Prisma.GuestResponsesFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestResponsesPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.SessionFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SessionPayload>
+          args: Prisma.GuestResponsesFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestResponsesPayload>
         }
         findFirst: {
-          args: Prisma.SessionFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SessionPayload> | null
+          args: Prisma.GuestResponsesFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestResponsesPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.SessionFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SessionPayload>
+          args: Prisma.GuestResponsesFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestResponsesPayload>
         }
         findMany: {
-          args: Prisma.SessionFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SessionPayload>[]
+          args: Prisma.GuestResponsesFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestResponsesPayload>[]
         }
         create: {
-          args: Prisma.SessionCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SessionPayload>
+          args: Prisma.GuestResponsesCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestResponsesPayload>
         }
         createMany: {
-          args: Prisma.SessionCreateManyArgs<ExtArgs>
+          args: Prisma.GuestResponsesCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         createManyAndReturn: {
-          args: Prisma.SessionCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SessionPayload>[]
+          args: Prisma.GuestResponsesCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestResponsesPayload>[]
         }
         delete: {
-          args: Prisma.SessionDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SessionPayload>
+          args: Prisma.GuestResponsesDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestResponsesPayload>
         }
         update: {
-          args: Prisma.SessionUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SessionPayload>
+          args: Prisma.GuestResponsesUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestResponsesPayload>
         }
         deleteMany: {
-          args: Prisma.SessionDeleteManyArgs<ExtArgs>
+          args: Prisma.GuestResponsesDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.SessionUpdateManyArgs<ExtArgs>
+          args: Prisma.GuestResponsesUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateManyAndReturn: {
-          args: Prisma.SessionUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SessionPayload>[]
+          args: Prisma.GuestResponsesUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestResponsesPayload>[]
         }
         upsert: {
-          args: Prisma.SessionUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SessionPayload>
+          args: Prisma.GuestResponsesUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuestResponsesPayload>
         }
         aggregate: {
-          args: Prisma.SessionAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateSession>
+          args: Prisma.GuestResponsesAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateGuestResponses>
         }
         groupBy: {
-          args: Prisma.SessionGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.SessionGroupByOutputType>[]
+          args: Prisma.GuestResponsesGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.GuestResponsesGroupByOutputType>[]
         }
         count: {
-          args: Prisma.SessionCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.SessionCountAggregateOutputType> | number
+          args: Prisma.GuestResponsesCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.GuestResponsesCountAggregateOutputType> | number
         }
       }
     }
@@ -830,8 +830,8 @@ export const UserScalarFieldEnum = {
   whatsapp: 'whatsapp',
   role: 'role',
   password: 'password',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -840,40 +840,38 @@ export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof User
 export const InvitationScalarFieldEnum = {
   id: 'id',
   slug: 'slug',
-  name: 'name',
-  phone: 'phone',
-  whatsapp: 'whatsapp',
-  message: 'message',
-  status: 'status',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  title: 'title'
 } as const
 
 export type InvitationScalarFieldEnum = (typeof InvitationScalarFieldEnum)[keyof typeof InvitationScalarFieldEnum]
 
 
-export const CommentsScalarFieldEnum = {
+export const GuestListScalarFieldEnum = {
+  id: 'id',
+  slug: 'slug',
+  name: 'name',
+  phone: 'phone',
+  whatsapp: 'whatsapp',
+  message: 'message',
+  status: 'status',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type GuestListScalarFieldEnum = (typeof GuestListScalarFieldEnum)[keyof typeof GuestListScalarFieldEnum]
+
+
+export const GuestResponsesScalarFieldEnum = {
   id: 'id',
   slug: 'slug',
   name: 'name',
   message: 'message',
   confirmation: 'confirmation',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
-export type CommentsScalarFieldEnum = (typeof CommentsScalarFieldEnum)[keyof typeof CommentsScalarFieldEnum]
-
-
-export const SessionScalarFieldEnum = {
-  sid: 'sid',
-  data: 'data',
-  expiresAt: 'expiresAt',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type SessionScalarFieldEnum = (typeof SessionScalarFieldEnum)[keyof typeof SessionScalarFieldEnum]
+export type GuestResponsesScalarFieldEnum = (typeof GuestResponsesScalarFieldEnum)[keyof typeof GuestResponsesScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1008,8 +1006,8 @@ export type GlobalOmitConfig = {
   version?: Prisma.VersionOmit
   user?: Prisma.UserOmit
   invitation?: Prisma.InvitationOmit
-  comments?: Prisma.CommentsOmit
-  session?: Prisma.SessionOmit
+  guestList?: Prisma.GuestListOmit
+  guestResponses?: Prisma.GuestResponsesOmit
 }
 
 /* Types for Logging */

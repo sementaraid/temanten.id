@@ -27,37 +27,19 @@ export type AggregateInvitation = {
 export type InvitationMinAggregateOutputType = {
   id: string | null
   slug: string | null
-  name: string | null
-  phone: string | null
-  whatsapp: string | null
-  message: string | null
-  status: string | null
-  createdAt: Date | null
-  updatedAt: Date | null
+  title: string | null
 }
 
 export type InvitationMaxAggregateOutputType = {
   id: string | null
   slug: string | null
-  name: string | null
-  phone: string | null
-  whatsapp: string | null
-  message: string | null
-  status: string | null
-  createdAt: Date | null
-  updatedAt: Date | null
+  title: string | null
 }
 
 export type InvitationCountAggregateOutputType = {
   id: number
   slug: number
-  name: number
-  phone: number
-  whatsapp: number
-  message: number
-  status: number
-  createdAt: number
-  updatedAt: number
+  title: number
   _all: number
 }
 
@@ -65,37 +47,19 @@ export type InvitationCountAggregateOutputType = {
 export type InvitationMinAggregateInputType = {
   id?: true
   slug?: true
-  name?: true
-  phone?: true
-  whatsapp?: true
-  message?: true
-  status?: true
-  createdAt?: true
-  updatedAt?: true
+  title?: true
 }
 
 export type InvitationMaxAggregateInputType = {
   id?: true
   slug?: true
-  name?: true
-  phone?: true
-  whatsapp?: true
-  message?: true
-  status?: true
-  createdAt?: true
-  updatedAt?: true
+  title?: true
 }
 
 export type InvitationCountAggregateInputType = {
   id?: true
   slug?: true
-  name?: true
-  phone?: true
-  whatsapp?: true
-  message?: true
-  status?: true
-  createdAt?: true
-  updatedAt?: true
+  title?: true
   _all?: true
 }
 
@@ -174,13 +138,7 @@ export type InvitationGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inter
 export type InvitationGroupByOutputType = {
   id: string
   slug: string
-  name: string
-  phone: string
-  whatsapp: string
-  message: string
-  status: string
-  createdAt: Date
-  updatedAt: Date
+  title: string
   _count: InvitationCountAggregateOutputType | null
   _min: InvitationMinAggregateOutputType | null
   _max: InvitationMaxAggregateOutputType | null
@@ -207,25 +165,13 @@ export type InvitationWhereInput = {
   NOT?: Prisma.InvitationWhereInput | Prisma.InvitationWhereInput[]
   id?: Prisma.StringFilter<"Invitation"> | string
   slug?: Prisma.StringFilter<"Invitation"> | string
-  name?: Prisma.StringFilter<"Invitation"> | string
-  phone?: Prisma.StringFilter<"Invitation"> | string
-  whatsapp?: Prisma.StringFilter<"Invitation"> | string
-  message?: Prisma.StringFilter<"Invitation"> | string
-  status?: Prisma.StringFilter<"Invitation"> | string
-  createdAt?: Prisma.DateTimeFilter<"Invitation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Invitation"> | Date | string
+  title?: Prisma.StringFilter<"Invitation"> | string
 }
 
 export type InvitationOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   slug?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  phone?: Prisma.SortOrder
-  whatsapp?: Prisma.SortOrder
-  message?: Prisma.SortOrder
-  status?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  title?: Prisma.SortOrder
 }
 
 export type InvitationWhereUniqueInput = Prisma.AtLeast<{
@@ -234,25 +180,13 @@ export type InvitationWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.InvitationWhereInput[]
   NOT?: Prisma.InvitationWhereInput | Prisma.InvitationWhereInput[]
   slug?: Prisma.StringFilter<"Invitation"> | string
-  name?: Prisma.StringFilter<"Invitation"> | string
-  phone?: Prisma.StringFilter<"Invitation"> | string
-  whatsapp?: Prisma.StringFilter<"Invitation"> | string
-  message?: Prisma.StringFilter<"Invitation"> | string
-  status?: Prisma.StringFilter<"Invitation"> | string
-  createdAt?: Prisma.DateTimeFilter<"Invitation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Invitation"> | Date | string
+  title?: Prisma.StringFilter<"Invitation"> | string
 }, "id">
 
 export type InvitationOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   slug?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  phone?: Prisma.SortOrder
-  whatsapp?: Prisma.SortOrder
-  message?: Prisma.SortOrder
-  status?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   _count?: Prisma.InvitationCountOrderByAggregateInput
   _max?: Prisma.InvitationMaxOrderByAggregateInput
   _min?: Prisma.InvitationMinOrderByAggregateInput
@@ -264,133 +198,67 @@ export type InvitationScalarWhereWithAggregatesInput = {
   NOT?: Prisma.InvitationScalarWhereWithAggregatesInput | Prisma.InvitationScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
   slug?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
-  name?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
-  phone?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
-  whatsapp?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
-  message?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
-  status?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Invitation"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Invitation"> | Date | string
+  title?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
 }
 
 export type InvitationCreateInput = {
   id?: string
   slug: string
-  name: string
-  phone: string
-  whatsapp: string
-  message: string
-  status?: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  title: string
 }
 
 export type InvitationUncheckedCreateInput = {
   id?: string
   slug: string
-  name: string
-  phone: string
-  whatsapp: string
-  message: string
-  status?: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  title: string
 }
 
 export type InvitationUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  phone?: Prisma.StringFieldUpdateOperationsInput | string
-  whatsapp?: Prisma.StringFieldUpdateOperationsInput | string
-  message?: Prisma.StringFieldUpdateOperationsInput | string
-  status?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type InvitationUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  phone?: Prisma.StringFieldUpdateOperationsInput | string
-  whatsapp?: Prisma.StringFieldUpdateOperationsInput | string
-  message?: Prisma.StringFieldUpdateOperationsInput | string
-  status?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type InvitationCreateManyInput = {
   id?: string
   slug: string
-  name: string
-  phone: string
-  whatsapp: string
-  message: string
-  status?: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  title: string
 }
 
 export type InvitationUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  phone?: Prisma.StringFieldUpdateOperationsInput | string
-  whatsapp?: Prisma.StringFieldUpdateOperationsInput | string
-  message?: Prisma.StringFieldUpdateOperationsInput | string
-  status?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type InvitationUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  phone?: Prisma.StringFieldUpdateOperationsInput | string
-  whatsapp?: Prisma.StringFieldUpdateOperationsInput | string
-  message?: Prisma.StringFieldUpdateOperationsInput | string
-  status?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type InvitationCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   slug?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  phone?: Prisma.SortOrder
-  whatsapp?: Prisma.SortOrder
-  message?: Prisma.SortOrder
-  status?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  title?: Prisma.SortOrder
 }
 
 export type InvitationMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   slug?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  phone?: Prisma.SortOrder
-  whatsapp?: Prisma.SortOrder
-  message?: Prisma.SortOrder
-  status?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  title?: Prisma.SortOrder
 }
 
 export type InvitationMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   slug?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  phone?: Prisma.SortOrder
-  whatsapp?: Prisma.SortOrder
-  message?: Prisma.SortOrder
-  status?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  title?: Prisma.SortOrder
 }
 
 
@@ -398,52 +266,28 @@ export type InvitationMinOrderByAggregateInput = {
 export type InvitationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   slug?: boolean
-  name?: boolean
-  phone?: boolean
-  whatsapp?: boolean
-  message?: boolean
-  status?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  title?: boolean
 }, ExtArgs["result"]["invitation"]>
 
 export type InvitationSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   slug?: boolean
-  name?: boolean
-  phone?: boolean
-  whatsapp?: boolean
-  message?: boolean
-  status?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  title?: boolean
 }, ExtArgs["result"]["invitation"]>
 
 export type InvitationSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   slug?: boolean
-  name?: boolean
-  phone?: boolean
-  whatsapp?: boolean
-  message?: boolean
-  status?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  title?: boolean
 }, ExtArgs["result"]["invitation"]>
 
 export type InvitationSelectScalar = {
   id?: boolean
   slug?: boolean
-  name?: boolean
-  phone?: boolean
-  whatsapp?: boolean
-  message?: boolean
-  status?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  title?: boolean
 }
 
-export type InvitationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "name" | "phone" | "whatsapp" | "message" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["invitation"]>
+export type InvitationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "title", ExtArgs["result"]["invitation"]>
 
 export type $InvitationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Invitation"
@@ -451,13 +295,7 @@ export type $InvitationPayload<ExtArgs extends runtime.Types.Extensions.Internal
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     slug: string
-    name: string
-    phone: string
-    whatsapp: string
-    message: string
-    status: string
-    createdAt: Date
-    updatedAt: Date
+    title: string
   }, ExtArgs["result"]["invitation"]>
   composites: {}
 }
@@ -883,13 +721,7 @@ export interface Prisma__InvitationClient<T, Null = never, ExtArgs extends runti
 export interface InvitationFieldRefs {
   readonly id: Prisma.FieldRef<"Invitation", 'String'>
   readonly slug: Prisma.FieldRef<"Invitation", 'String'>
-  readonly name: Prisma.FieldRef<"Invitation", 'String'>
-  readonly phone: Prisma.FieldRef<"Invitation", 'String'>
-  readonly whatsapp: Prisma.FieldRef<"Invitation", 'String'>
-  readonly message: Prisma.FieldRef<"Invitation", 'String'>
-  readonly status: Prisma.FieldRef<"Invitation", 'String'>
-  readonly createdAt: Prisma.FieldRef<"Invitation", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Invitation", 'DateTime'>
+  readonly title: Prisma.FieldRef<"Invitation", 'String'>
 }
     
 

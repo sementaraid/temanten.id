@@ -1,4 +1,4 @@
-import type { IJWTPayload } from '../types'
+import type { IJWTPayload } from '../shared/types'
 
 declare global {
   interface Window {

@@ -26,11 +26,17 @@ model User {
   whatsapp    String
   role        String
   password    String
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
 }
 
 model Invitation {
+  id          String    @id @default(cuid())
+  slug        String
+  title       String
+}
+
+model GuestList {
   id          String    @id @default(cuid())
   slug        String
   name        String
@@ -38,24 +44,16 @@ model Invitation {
   whatsapp    String
   message     String
   status      String    @default("unknown") // received, accepted, declined
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
 }
 
-model Comments {
+model GuestResponses {
   id            String    @id @default(cuid())
   slug          String
   name          String
   message       String
   confirmation  String
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-}
-
-model Session {
-  sid       String   @id @unique
-  data      String
-  expiresAt DateTime
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  created_at    DateTime  @default(now())
+  updated_at    DateTime  @updatedAt
 }

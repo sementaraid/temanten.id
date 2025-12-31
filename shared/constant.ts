@@ -1,0 +1,1 @@
+export const AUTH_SCRIPT_ID = '__auth_script__'

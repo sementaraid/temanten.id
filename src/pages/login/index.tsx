@@ -9,19 +9,10 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { postFetcher } from '@/lib/fetcher'
 import { Link, useNavigate } from 'react-router'
+import { createSessionSchema } from '@shared/schema'
+import { AUTH_SCRIPT_ID } from '@shared/constant'
 
-const AUTH_SCRIPT_ID = '__auth_script__'
-const loginSchema = z.object({
-  email: z
-    .string()
-    .min(1, 'Email is required')
-    .email('Invalid email address'),
-  password: z
-    .string()
-    .min(6, 'Password must be at least 6 characters'),
-})
-
-type LoginSchema = z.infer<typeof loginSchema>
+type LoginSchema = z.infer<typeof createSessionSchema>
 type LoginResponse = {
   message: string,
   token: string,
@@ -42,7 +33,7 @@ export const Login = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<LoginSchema>({
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(createSessionSchema),
     defaultValues: {
       email: '',
       password: '',

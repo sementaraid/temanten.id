@@ -54,8 +54,8 @@ export const ModelName = {
   Version: 'Version',
   User: 'User',
   Invitation: 'Invitation',
-  Comments: 'Comments',
-  Session: 'Session'
+  GuestList: 'GuestList',
+  GuestResponses: 'GuestResponses'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -87,8 +87,8 @@ export const UserScalarFieldEnum = {
   whatsapp: 'whatsapp',
   role: 'role',
   password: 'password',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -97,40 +97,38 @@ export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof User
 export const InvitationScalarFieldEnum = {
   id: 'id',
   slug: 'slug',
-  name: 'name',
-  phone: 'phone',
-  whatsapp: 'whatsapp',
-  message: 'message',
-  status: 'status',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  title: 'title'
 } as const
 
 export type InvitationScalarFieldEnum = (typeof InvitationScalarFieldEnum)[keyof typeof InvitationScalarFieldEnum]
 
 
-export const CommentsScalarFieldEnum = {
+export const GuestListScalarFieldEnum = {
+  id: 'id',
+  slug: 'slug',
+  name: 'name',
+  phone: 'phone',
+  whatsapp: 'whatsapp',
+  message: 'message',
+  status: 'status',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type GuestListScalarFieldEnum = (typeof GuestListScalarFieldEnum)[keyof typeof GuestListScalarFieldEnum]
+
+
+export const GuestResponsesScalarFieldEnum = {
   id: 'id',
   slug: 'slug',
   name: 'name',
   message: 'message',
   confirmation: 'confirmation',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
-export type CommentsScalarFieldEnum = (typeof CommentsScalarFieldEnum)[keyof typeof CommentsScalarFieldEnum]
-
-
-export const SessionScalarFieldEnum = {
-  sid: 'sid',
-  data: 'data',
-  expiresAt: 'expiresAt',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type SessionScalarFieldEnum = (typeof SessionScalarFieldEnum)[keyof typeof SessionScalarFieldEnum]
+export type GuestResponsesScalarFieldEnum = (typeof GuestResponsesScalarFieldEnum)[keyof typeof GuestResponsesScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -1,15 +1,25 @@
-import { Request, Response, NextFunction } from "express";
+import type { Request, Response, NextFunction } from 'express'
 
-const authGuard = (req: Request, res: Response, next: NextFunction) => {
-  const token = req.cookies.token;
-  if (token) return res.redirect('/dashboard');
-  next();
-};
+export class AuthGuard {
+  static guestOnly(req: Request, res: Response, next: NextFunction): void {
+    const token = req.cookies?.token
 
-const requireLogin = (req: Request, res: Response, next: NextFunction) => {
-  const token = req.cookies.token;
-  if (!token) return res.redirect('/sign-in');
-  next();
-};
+    if (token) {
+      res.redirect('/dashboard')
+      return
+    }
 
-export { authGuard, requireLogin };
+    next()
+  }
+
+  static requireLogin(req: Request, res: Response, next: NextFunction): void {
+    const token = req.cookies?.token
+
+    if (!token) {
+      res.redirect('/sign-in')
+      return
+    }
+
+    next()
+  }
+}

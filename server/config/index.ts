@@ -2,7 +2,8 @@ import dotenv from 'dotenv'
 import path from 'path'
 import swaggerJsDoc from 'swagger-jsdoc'
 import { PrismaLibSql } from '@prisma/adapter-libsql'
-import { PrismaClient } from '../../prisma/generated/client'
+import type { SignOptions, Algorithm } from 'jsonwebtoken'
+import { PrismaClient } from '@database/generated/client'
 
 dotenv.config()
 
@@ -12,8 +13,8 @@ dotenv.config()
 
 type JwtConfig = {
   secret: string
-  expire: string
-  algorithms: readonly ['HS256']
+  expiresIn: SignOptions['expiresIn']
+  algorithm: Algorithm
 }
 
 type RolePermissions = Record<string, string[]>
@@ -50,12 +51,11 @@ class Config {
   /* ------------------------------------------------------------------------ */
   /*                               INITIALIZERS                               */
   /* ------------------------------------------------------------------------ */
-
   private initJwtConfig(): JwtConfig {
     return {
       secret: process.env.JWT_SECRET ?? 'your-secret-key',
-      expire: process.env.JWT_EXPIRE ?? '24h',
-      algorithms: ['HS256'] as const
+      expiresIn: '24Hr',
+      algorithm: 'HS256'
     }
   }
 

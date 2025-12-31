@@ -55,12 +55,12 @@ export type User = Prisma.UserModel
  */
 export type Invitation = Prisma.InvitationModel
 /**
- * Model Comments
+ * Model GuestList
  * 
  */
-export type Comments = Prisma.CommentsModel
+export type GuestList = Prisma.GuestListModel
 /**
- * Model Session
+ * Model GuestResponses
  * 
  */
-export type Session = Prisma.SessionModel
+export type GuestResponses = Prisma.GuestResponsesModel

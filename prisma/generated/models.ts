@@ -11,6 +11,6 @@
 export type * from './models/Version.js'
 export type * from './models/User.js'
 export type * from './models/Invitation.js'
-export type * from './models/Comments.js'
-export type * from './models/Session.js'
+export type * from './models/GuestList.js'
+export type * from './models/GuestResponses.js'
 export type * from './commonInputTypes.js'

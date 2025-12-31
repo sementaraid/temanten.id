@@ -33,9 +33,10 @@
     /* Vite */
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": [ "./src/*" ],
+      "@database/*": ["./prisma/*"],
+      "@server/*": ["./server/*"],
+      "@shared/*": ["./shared/*"],
     }
   },
   "include": [

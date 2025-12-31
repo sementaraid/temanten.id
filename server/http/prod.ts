@@ -1,7 +1,7 @@
 import express, { type Express } from 'express'
 import path from 'path'
 import fs from 'fs'
-import { root } from '../constant'
+import { root } from '@server/constant'
 import { distVersion } from '../../app.config'
 
 export const setupProdServer = async (app: Express) => {

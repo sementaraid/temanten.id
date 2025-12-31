@@ -9,37 +9,10 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { postFetcher } from '@/lib/fetcher'
 import { Link, useNavigate } from 'react-router'
+import { createUserSchema } from '@shared/schema'
+import { AUTH_SCRIPT_ID } from '@shared/constant'
 
-const AUTH_SCRIPT_ID = '__auth_script__'
-const registerSchema = z.object({
-  name: z
-    .string()
-    .min(1, 'Name is required')
-    .min(2, 'Name must be at least 2 characters'),
-  email: z
-    .string()
-    .min(1, 'Email is required')
-    .email('Invalid email address'),
-  password: z
-    .string()
-    .min(6, 'Password must be at least 6 characters'),
-  confirmPassword: z
-    .string()
-    .min(6, 'Password confirmation is required'),
-  phone: z
-    .string()
-    .min(1, 'Phone number is required'),
-  whatsapp: z
-    .string()
-    .min(1, 'WhatsApp number is required'),
-  sameNumber: z
-    .boolean(),
-}).refine((data) => data.password === data.confirmPassword, {
-  message: 'Passwords do not match',
-  path: ['confirmPassword'],
-})
-
-type RegisterSchema = z.infer<typeof registerSchema>
+type RegisterSchema = z.infer<typeof createUserSchema>
 type RegisterResponse = {
   message: string,
   token: string,
@@ -62,7 +35,7 @@ export const Register = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<RegisterSchema>({
-    resolver: zodResolver(registerSchema),
+    resolver: zodResolver(createUserSchema),
     defaultValues: {
       name: '',
       email: '',
@@ -86,7 +59,7 @@ export const Register = () => {
         sameNumber: data.sameNumber,
       })
 
-      if(!response) throw Error('Failed to create account')
+      if (!response) throw Error('Failed to create account')
       const existing = document.getElementById(AUTH_SCRIPT_ID)
       if (existing) {
         existing.remove()
@@ -95,10 +68,11 @@ export const Register = () => {
       const script = document.createElement('script')
       script.id = AUTH_SCRIPT_ID
       script.type = 'text/javascript'
-      script.innerHTML = `window.__AUTH__ = ${JSON.stringify({ 
-        isLoggedIn: true, 
-        user: JSON.parse(atob(response.token.split('.')[1]))})
-      }`
+      script.innerHTML = `window.__AUTH__ = ${JSON.stringify({
+        isLoggedIn: true,
+        user: JSON.parse(atob(response.token.split('.')[1]))
+      })
+        }`
       document.head.appendChild(script)
       navigate('/dashboard')
     }

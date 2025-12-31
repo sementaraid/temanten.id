@@ -1,21 +1,21 @@
-import { Router, Request, Response, NextFunction } from 'express';
-import { authGuard, requireLogin } from '../middlewares/page.middleware';
+import { Router, type Request, type Response, type NextFunction } from 'express';
+import { AuthGuard } from '@server/middlewares/page.middleware';
 
 const router = Router();
 
 // Sign-in page - with auth guard
 router.get(
-  '/sign-in', authGuard, (_req: Request, _res: Response, next: NextFunction) => {
+  '/sign-in', AuthGuard.guestOnly, (_req: Request, _res: Response, next: NextFunction) => {
   next();
 });
 
 // Register page - with auth guard
-router.get('/register', authGuard, (_req: Request, _res: Response, next: NextFunction) => {
+router.get('/register', AuthGuard.guestOnly, (_req: Request, _res: Response, next: NextFunction) => {
   next();
 });
 
 // Dashboard page - requires login
-router.get('/dashboard', requireLogin, (_req: Request, _res: Response, next: NextFunction) => {
+router.get('/dashboard', AuthGuard.requireLogin, (_req: Request, _res: Response, next: NextFunction) => {
   next();
 });
 
