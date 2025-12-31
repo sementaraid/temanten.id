@@ -26,7 +26,7 @@ export const Login = () => {
     Error,
     string,
     LoginSchema
-  >(`http://localhost:3000/api/auth/login`, postFetcher())
+  >(`http://localhost:3000/api/auth/sign-in`, postFetcher())
 
   const {
     register,

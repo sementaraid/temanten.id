@@ -28,7 +28,7 @@ export const Register = () => {
     Error,
     string,
     RegisterSchema
-  >(`http://localhost:3000/api/auth/register`, postFetcher())
+  >(`http://localhost:3000/api/auth/sign-up`, postFetcher())
 
   const {
     register,

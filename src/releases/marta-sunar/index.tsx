@@ -10,11 +10,16 @@ import { Audio } from '@/components/features/audio'
 import { SplashScreen } from '@/components/section/welcome'
 import { TemantenProvider } from '@/context'
 import '@/releases/marta-sunar/styles/main.css'
+import { cn } from '@/lib/utils'
 
 const Page = () => {
+  const isIframe = window.self !== window.top;
   return (
     <TemantenProvider>
-      <div className="w-full max-w-screen-sm m-auto bg-[beige]">
+      <div className={cn(
+        "w-full m-auto bg-[beige]",
+        !isIframe && 'max-w-screen-sm'
+      )}>
         <SplashScreen />
         <Audio />
         <SnowfallEffect />

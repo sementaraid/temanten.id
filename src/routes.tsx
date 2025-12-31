@@ -8,6 +8,7 @@ import { Layout } from "./layout"
 import { Login } from "./pages/login"
 import { Register } from "./pages/register"
 import { DashboardLayout } from "./layout/dashboard"
+import MyInvitation from "@/pages/my-invitation"
 
 const routeReleasedByVersion = {
   '1766308273810': {
@@ -57,6 +58,10 @@ const routeReleasedByVersion = {
       {
         path: 'customers',
         Component: () => <>customers</>
+      },
+      {
+        path: 'my-invitations/list',
+        Component: MyInvitation
       }
     ]
   }
