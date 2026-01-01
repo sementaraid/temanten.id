@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { Save, Eye, Smartphone, Monitor, Palette, Type, Image as ImageIcon, Calendar, MapPin, Heart, Users } from 'lucide-react'
+import { Save, Eye, Smartphone, Monitor, Palette, Image as ImageIcon, Calendar, MapPin, Heart } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'

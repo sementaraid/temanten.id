@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { Plus, Upload, Download, Search, MoreVertical, Mail, Phone, Check, X, UserPlus, Trash2, Save } from 'lucide-react'
+import { Plus, Upload, Download, Search, Mail, Phone, Check, X, UserPlus, Trash2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'

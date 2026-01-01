@@ -1,8 +1,5 @@
 import { ArrowLeft, Eye, MessageCircle, Settings, Users } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { useNavigate } from "react-router"
-import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
 import { useState, type ReactNode } from "react";
 
 type TabType = 'builder' | 'guests' | 'messages'
@@ -55,35 +52,6 @@ export const Navigation = ({ previousUrl, title, subTitle, RightSection, BellowS
           {BellowSection}
         </>
       )}
-      {/* <div className="max-w-7xl mx-auto px-6">
-        <div className="flex gap-1">
-          {tabs.map((tab) => {
-            const Icon = tab.icon
-            return (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id as TabType)}
-                className={cn(
-                  "flex items-center gap-2 px-4 py-3 text-sm font-medium transition-colors relative",
-                  activeTab === tab.id
-                    ? "text-emerald-600"
-                    : "text-gray-600 hover:text-gray-900"
-                )}
-              >
-                <Icon size={16} />
-                {tab.name}
-                {activeTab === tab.id && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-600"
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  />
-                )}
-              </button>
-            )
-          })}
-        </div>
-      </div> */}
     </div>
   )
 }
