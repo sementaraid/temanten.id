@@ -19,41 +19,70 @@ model Version {
 }
 
 model User {
-  id          String    @id @default(cuid())
-  name        String
-  email       String    @unique
-  phone       String
-  whatsapp    String
-  role        String
-  password    String
-  created_at  DateTime  @default(now())
-  updated_at  DateTime  @updatedAt
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  phone     String
+  whatsapp  String
+  role      String
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Invitation {
-  id          String    @id @default(cuid())
-  slug        String
-  title       String
+  id                       String   @id @default(cuid())
+  slug                     String   @unique
+  title                    String
+  author                   String
+  message                  String
+  templateId               String
+  brideFullName            String
+  brideNickname            String?
+  brideBirthOrder          String?
+  brideFather              String?
+  brideMother              String?
+  brideInstagram           String?
+  groomFullName            String
+  groomNickname            String?
+  groomBirthOrder          String?
+  groomFather              String?
+  groomMother              String?
+  groomInstagram           String?
+  ceremonyName             String   @default("Akad Nikah")
+  ceremonyDate             String
+  ceremonyTime             String
+  ceremonyLocationName     String?
+  ceremonyAddress          String?
+  ceremonyMapsUrl          String?
+  receptionName            String   @default("Resepsi")
+  receptionDate            String
+  receptionTime            String
+  receptionLocationName    String?
+  receptionAddress         String?
+  receptionMapsUrl         String?
+  createdAt                DateTime @default(now())
+  updatedAt                DateTime @updatedAt
 }
 
 model GuestList {
-  id          String    @id @default(cuid())
-  slug        String
-  name        String
-  phone       String
-  whatsapp    String
-  message     String
-  status      String    @default("unknown") // received, accepted, declined
-  created_at  DateTime  @default(now())
-  updated_at  DateTime  @updatedAt
+  id       String   @id @default(cuid())
+  slug     String
+  name     String
+  phone    String
+  whatsapp String
+  message  String
+  status   String   @default("unknown")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model GuestResponses {
-  id            String    @id @default(cuid())
+  id            String   @id @default(cuid())
   slug          String
   name          String
   message       String
   confirmation  String
-  created_at    DateTime  @default(now())
-  updated_at    DateTime  @updatedAt
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 }

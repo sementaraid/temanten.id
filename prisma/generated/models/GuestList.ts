@@ -32,8 +32,8 @@ export type GuestListMinAggregateOutputType = {
   whatsapp: string | null
   message: string | null
   status: string | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type GuestListMaxAggregateOutputType = {
@@ -44,8 +44,8 @@ export type GuestListMaxAggregateOutputType = {
   whatsapp: string | null
   message: string | null
   status: string | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type GuestListCountAggregateOutputType = {
@@ -56,8 +56,8 @@ export type GuestListCountAggregateOutputType = {
   whatsapp: number
   message: number
   status: number
-  created_at: number
-  updated_at: number
+  createdAt: number
+  updatedAt: number
   _all: number
 }
 
@@ -70,8 +70,8 @@ export type GuestListMinAggregateInputType = {
   whatsapp?: true
   message?: true
   status?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type GuestListMaxAggregateInputType = {
@@ -82,8 +82,8 @@ export type GuestListMaxAggregateInputType = {
   whatsapp?: true
   message?: true
   status?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type GuestListCountAggregateInputType = {
@@ -94,8 +94,8 @@ export type GuestListCountAggregateInputType = {
   whatsapp?: true
   message?: true
   status?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
   _all?: true
 }
 
@@ -179,8 +179,8 @@ export type GuestListGroupByOutputType = {
   whatsapp: string
   message: string
   status: string
-  created_at: Date
-  updated_at: Date
+  createdAt: Date
+  updatedAt: Date
   _count: GuestListCountAggregateOutputType | null
   _min: GuestListMinAggregateOutputType | null
   _max: GuestListMaxAggregateOutputType | null
@@ -212,8 +212,8 @@ export type GuestListWhereInput = {
   whatsapp?: Prisma.StringFilter<"GuestList"> | string
   message?: Prisma.StringFilter<"GuestList"> | string
   status?: Prisma.StringFilter<"GuestList"> | string
-  created_at?: Prisma.DateTimeFilter<"GuestList"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"GuestList"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"GuestList"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"GuestList"> | Date | string
 }
 
 export type GuestListOrderByWithRelationInput = {
@@ -224,8 +224,8 @@ export type GuestListOrderByWithRelationInput = {
   whatsapp?: Prisma.SortOrder
   message?: Prisma.SortOrder
   status?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type GuestListWhereUniqueInput = Prisma.AtLeast<{
@@ -239,8 +239,8 @@ export type GuestListWhereUniqueInput = Prisma.AtLeast<{
   whatsapp?: Prisma.StringFilter<"GuestList"> | string
   message?: Prisma.StringFilter<"GuestList"> | string
   status?: Prisma.StringFilter<"GuestList"> | string
-  created_at?: Prisma.DateTimeFilter<"GuestList"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"GuestList"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"GuestList"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"GuestList"> | Date | string
 }, "id">
 
 export type GuestListOrderByWithAggregationInput = {
@@ -251,8 +251,8 @@ export type GuestListOrderByWithAggregationInput = {
   whatsapp?: Prisma.SortOrder
   message?: Prisma.SortOrder
   status?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   _count?: Prisma.GuestListCountOrderByAggregateInput
   _max?: Prisma.GuestListMaxOrderByAggregateInput
   _min?: Prisma.GuestListMinOrderByAggregateInput
@@ -269,8 +269,8 @@ export type GuestListScalarWhereWithAggregatesInput = {
   whatsapp?: Prisma.StringWithAggregatesFilter<"GuestList"> | string
   message?: Prisma.StringWithAggregatesFilter<"GuestList"> | string
   status?: Prisma.StringWithAggregatesFilter<"GuestList"> | string
-  created_at?: Prisma.DateTimeWithAggregatesFilter<"GuestList"> | Date | string
-  updated_at?: Prisma.DateTimeWithAggregatesFilter<"GuestList"> | Date | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"GuestList"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"GuestList"> | Date | string
 }
 
 export type GuestListCreateInput = {
@@ -281,8 +281,8 @@ export type GuestListCreateInput = {
   whatsapp: string
   message: string
   status?: string
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type GuestListUncheckedCreateInput = {
@@ -293,8 +293,8 @@ export type GuestListUncheckedCreateInput = {
   whatsapp: string
   message: string
   status?: string
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type GuestListUpdateInput = {
@@ -305,8 +305,8 @@ export type GuestListUpdateInput = {
   whatsapp?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type GuestListUncheckedUpdateInput = {
@@ -317,8 +317,8 @@ export type GuestListUncheckedUpdateInput = {
   whatsapp?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type GuestListCreateManyInput = {
@@ -329,8 +329,8 @@ export type GuestListCreateManyInput = {
   whatsapp: string
   message: string
   status?: string
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type GuestListUpdateManyMutationInput = {
@@ -341,8 +341,8 @@ export type GuestListUpdateManyMutationInput = {
   whatsapp?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type GuestListUncheckedUpdateManyInput = {
@@ -353,8 +353,8 @@ export type GuestListUncheckedUpdateManyInput = {
   whatsapp?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type GuestListCountOrderByAggregateInput = {
@@ -365,8 +365,8 @@ export type GuestListCountOrderByAggregateInput = {
   whatsapp?: Prisma.SortOrder
   message?: Prisma.SortOrder
   status?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type GuestListMaxOrderByAggregateInput = {
@@ -377,8 +377,8 @@ export type GuestListMaxOrderByAggregateInput = {
   whatsapp?: Prisma.SortOrder
   message?: Prisma.SortOrder
   status?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type GuestListMinOrderByAggregateInput = {
@@ -389,8 +389,8 @@ export type GuestListMinOrderByAggregateInput = {
   whatsapp?: Prisma.SortOrder
   message?: Prisma.SortOrder
   status?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 
@@ -403,8 +403,8 @@ export type GuestListSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   whatsapp?: boolean
   message?: boolean
   status?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["guestList"]>
 
 export type GuestListSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -415,8 +415,8 @@ export type GuestListSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   whatsapp?: boolean
   message?: boolean
   status?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["guestList"]>
 
 export type GuestListSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -427,8 +427,8 @@ export type GuestListSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   whatsapp?: boolean
   message?: boolean
   status?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["guestList"]>
 
 export type GuestListSelectScalar = {
@@ -439,11 +439,11 @@ export type GuestListSelectScalar = {
   whatsapp?: boolean
   message?: boolean
   status?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }
 
-export type GuestListOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "name" | "phone" | "whatsapp" | "message" | "status" | "created_at" | "updated_at", ExtArgs["result"]["guestList"]>
+export type GuestListOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "name" | "phone" | "whatsapp" | "message" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["guestList"]>
 
 export type $GuestListPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "GuestList"
@@ -456,8 +456,8 @@ export type $GuestListPayload<ExtArgs extends runtime.Types.Extensions.InternalA
     whatsapp: string
     message: string
     status: string
-    created_at: Date
-    updated_at: Date
+    createdAt: Date
+    updatedAt: Date
   }, ExtArgs["result"]["guestList"]>
   composites: {}
 }
@@ -888,8 +888,8 @@ export interface GuestListFieldRefs {
   readonly whatsapp: Prisma.FieldRef<"GuestList", 'String'>
   readonly message: Prisma.FieldRef<"GuestList", 'String'>
   readonly status: Prisma.FieldRef<"GuestList", 'String'>
-  readonly created_at: Prisma.FieldRef<"GuestList", 'DateTime'>
-  readonly updated_at: Prisma.FieldRef<"GuestList", 'DateTime'>
+  readonly createdAt: Prisma.FieldRef<"GuestList", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"GuestList", 'DateTime'>
 }
     
 

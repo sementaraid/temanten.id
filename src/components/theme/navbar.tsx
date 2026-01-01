@@ -19,8 +19,11 @@ export const Navbar = () => {
           transition={{ duration: 0.6 }}
           className="flex gap-8 text-sm text-gray-600"
         >
-          {window.__AUTH__.isLoggedIn && (
+          {window.__AUTH__.isLoggedIn && window.__AUTH__.user.role === 'admin' && (
             <Link to="/dashboard">Dashboard</Link>
+          )}
+          {window.__AUTH__.isLoggedIn && window.__AUTH__.user.role === 'user' && (
+            <Link to="/my-invitations/list">My Invitations</Link>
           )}
           {!window.__AUTH__.isLoggedIn && (
             <>

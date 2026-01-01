@@ -830,8 +830,8 @@ export const UserScalarFieldEnum = {
   whatsapp: 'whatsapp',
   role: 'role',
   password: 'password',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -840,7 +840,36 @@ export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof User
 export const InvitationScalarFieldEnum = {
   id: 'id',
   slug: 'slug',
-  title: 'title'
+  title: 'title',
+  author: 'author',
+  message: 'message',
+  templateId: 'templateId',
+  brideFullName: 'brideFullName',
+  brideNickname: 'brideNickname',
+  brideBirthOrder: 'brideBirthOrder',
+  brideFather: 'brideFather',
+  brideMother: 'brideMother',
+  brideInstagram: 'brideInstagram',
+  groomFullName: 'groomFullName',
+  groomNickname: 'groomNickname',
+  groomBirthOrder: 'groomBirthOrder',
+  groomFather: 'groomFather',
+  groomMother: 'groomMother',
+  groomInstagram: 'groomInstagram',
+  ceremonyName: 'ceremonyName',
+  ceremonyDate: 'ceremonyDate',
+  ceremonyTime: 'ceremonyTime',
+  ceremonyLocationName: 'ceremonyLocationName',
+  ceremonyAddress: 'ceremonyAddress',
+  ceremonyMapsUrl: 'ceremonyMapsUrl',
+  receptionName: 'receptionName',
+  receptionDate: 'receptionDate',
+  receptionTime: 'receptionTime',
+  receptionLocationName: 'receptionLocationName',
+  receptionAddress: 'receptionAddress',
+  receptionMapsUrl: 'receptionMapsUrl',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type InvitationScalarFieldEnum = (typeof InvitationScalarFieldEnum)[keyof typeof InvitationScalarFieldEnum]
@@ -854,8 +883,8 @@ export const GuestListScalarFieldEnum = {
   whatsapp: 'whatsapp',
   message: 'message',
   status: 'status',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type GuestListScalarFieldEnum = (typeof GuestListScalarFieldEnum)[keyof typeof GuestListScalarFieldEnum]
@@ -867,8 +896,8 @@ export const GuestResponsesScalarFieldEnum = {
   name: 'name',
   message: 'message',
   confirmation: 'confirmation',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type GuestResponsesScalarFieldEnum = (typeof GuestResponsesScalarFieldEnum)[keyof typeof GuestResponsesScalarFieldEnum]
@@ -880,6 +909,14 @@ export const SortOrder = {
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
 

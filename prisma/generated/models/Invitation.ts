@@ -28,18 +28,105 @@ export type InvitationMinAggregateOutputType = {
   id: string | null
   slug: string | null
   title: string | null
+  author: string | null
+  message: string | null
+  templateId: string | null
+  brideFullName: string | null
+  brideNickname: string | null
+  brideBirthOrder: string | null
+  brideFather: string | null
+  brideMother: string | null
+  brideInstagram: string | null
+  groomFullName: string | null
+  groomNickname: string | null
+  groomBirthOrder: string | null
+  groomFather: string | null
+  groomMother: string | null
+  groomInstagram: string | null
+  ceremonyName: string | null
+  ceremonyDate: string | null
+  ceremonyTime: string | null
+  ceremonyLocationName: string | null
+  ceremonyAddress: string | null
+  ceremonyMapsUrl: string | null
+  receptionName: string | null
+  receptionDate: string | null
+  receptionTime: string | null
+  receptionLocationName: string | null
+  receptionAddress: string | null
+  receptionMapsUrl: string | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type InvitationMaxAggregateOutputType = {
   id: string | null
   slug: string | null
   title: string | null
+  author: string | null
+  message: string | null
+  templateId: string | null
+  brideFullName: string | null
+  brideNickname: string | null
+  brideBirthOrder: string | null
+  brideFather: string | null
+  brideMother: string | null
+  brideInstagram: string | null
+  groomFullName: string | null
+  groomNickname: string | null
+  groomBirthOrder: string | null
+  groomFather: string | null
+  groomMother: string | null
+  groomInstagram: string | null
+  ceremonyName: string | null
+  ceremonyDate: string | null
+  ceremonyTime: string | null
+  ceremonyLocationName: string | null
+  ceremonyAddress: string | null
+  ceremonyMapsUrl: string | null
+  receptionName: string | null
+  receptionDate: string | null
+  receptionTime: string | null
+  receptionLocationName: string | null
+  receptionAddress: string | null
+  receptionMapsUrl: string | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type InvitationCountAggregateOutputType = {
   id: number
   slug: number
   title: number
+  author: number
+  message: number
+  templateId: number
+  brideFullName: number
+  brideNickname: number
+  brideBirthOrder: number
+  brideFather: number
+  brideMother: number
+  brideInstagram: number
+  groomFullName: number
+  groomNickname: number
+  groomBirthOrder: number
+  groomFather: number
+  groomMother: number
+  groomInstagram: number
+  ceremonyName: number
+  ceremonyDate: number
+  ceremonyTime: number
+  ceremonyLocationName: number
+  ceremonyAddress: number
+  ceremonyMapsUrl: number
+  receptionName: number
+  receptionDate: number
+  receptionTime: number
+  receptionLocationName: number
+  receptionAddress: number
+  receptionMapsUrl: number
+  createdAt: number
+  updatedAt: number
   _all: number
 }
 
@@ -48,18 +135,105 @@ export type InvitationMinAggregateInputType = {
   id?: true
   slug?: true
   title?: true
+  author?: true
+  message?: true
+  templateId?: true
+  brideFullName?: true
+  brideNickname?: true
+  brideBirthOrder?: true
+  brideFather?: true
+  brideMother?: true
+  brideInstagram?: true
+  groomFullName?: true
+  groomNickname?: true
+  groomBirthOrder?: true
+  groomFather?: true
+  groomMother?: true
+  groomInstagram?: true
+  ceremonyName?: true
+  ceremonyDate?: true
+  ceremonyTime?: true
+  ceremonyLocationName?: true
+  ceremonyAddress?: true
+  ceremonyMapsUrl?: true
+  receptionName?: true
+  receptionDate?: true
+  receptionTime?: true
+  receptionLocationName?: true
+  receptionAddress?: true
+  receptionMapsUrl?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type InvitationMaxAggregateInputType = {
   id?: true
   slug?: true
   title?: true
+  author?: true
+  message?: true
+  templateId?: true
+  brideFullName?: true
+  brideNickname?: true
+  brideBirthOrder?: true
+  brideFather?: true
+  brideMother?: true
+  brideInstagram?: true
+  groomFullName?: true
+  groomNickname?: true
+  groomBirthOrder?: true
+  groomFather?: true
+  groomMother?: true
+  groomInstagram?: true
+  ceremonyName?: true
+  ceremonyDate?: true
+  ceremonyTime?: true
+  ceremonyLocationName?: true
+  ceremonyAddress?: true
+  ceremonyMapsUrl?: true
+  receptionName?: true
+  receptionDate?: true
+  receptionTime?: true
+  receptionLocationName?: true
+  receptionAddress?: true
+  receptionMapsUrl?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type InvitationCountAggregateInputType = {
   id?: true
   slug?: true
   title?: true
+  author?: true
+  message?: true
+  templateId?: true
+  brideFullName?: true
+  brideNickname?: true
+  brideBirthOrder?: true
+  brideFather?: true
+  brideMother?: true
+  brideInstagram?: true
+  groomFullName?: true
+  groomNickname?: true
+  groomBirthOrder?: true
+  groomFather?: true
+  groomMother?: true
+  groomInstagram?: true
+  ceremonyName?: true
+  ceremonyDate?: true
+  ceremonyTime?: true
+  ceremonyLocationName?: true
+  ceremonyAddress?: true
+  ceremonyMapsUrl?: true
+  receptionName?: true
+  receptionDate?: true
+  receptionTime?: true
+  receptionLocationName?: true
+  receptionAddress?: true
+  receptionMapsUrl?: true
+  createdAt?: true
+  updatedAt?: true
   _all?: true
 }
 
@@ -139,6 +313,35 @@ export type InvitationGroupByOutputType = {
   id: string
   slug: string
   title: string
+  author: string
+  message: string
+  templateId: string
+  brideFullName: string
+  brideNickname: string | null
+  brideBirthOrder: string | null
+  brideFather: string | null
+  brideMother: string | null
+  brideInstagram: string | null
+  groomFullName: string
+  groomNickname: string | null
+  groomBirthOrder: string | null
+  groomFather: string | null
+  groomMother: string | null
+  groomInstagram: string | null
+  ceremonyName: string
+  ceremonyDate: string
+  ceremonyTime: string
+  ceremonyLocationName: string | null
+  ceremonyAddress: string | null
+  ceremonyMapsUrl: string | null
+  receptionName: string
+  receptionDate: string
+  receptionTime: string
+  receptionLocationName: string | null
+  receptionAddress: string | null
+  receptionMapsUrl: string | null
+  createdAt: Date
+  updatedAt: Date
   _count: InvitationCountAggregateOutputType | null
   _min: InvitationMinAggregateOutputType | null
   _max: InvitationMaxAggregateOutputType | null
@@ -166,27 +369,143 @@ export type InvitationWhereInput = {
   id?: Prisma.StringFilter<"Invitation"> | string
   slug?: Prisma.StringFilter<"Invitation"> | string
   title?: Prisma.StringFilter<"Invitation"> | string
+  author?: Prisma.StringFilter<"Invitation"> | string
+  message?: Prisma.StringFilter<"Invitation"> | string
+  templateId?: Prisma.StringFilter<"Invitation"> | string
+  brideFullName?: Prisma.StringFilter<"Invitation"> | string
+  brideNickname?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  brideBirthOrder?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  brideFather?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  brideMother?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  brideInstagram?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  groomFullName?: Prisma.StringFilter<"Invitation"> | string
+  groomNickname?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  groomBirthOrder?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  groomFather?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  groomMother?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  groomInstagram?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  ceremonyName?: Prisma.StringFilter<"Invitation"> | string
+  ceremonyDate?: Prisma.StringFilter<"Invitation"> | string
+  ceremonyTime?: Prisma.StringFilter<"Invitation"> | string
+  ceremonyLocationName?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  ceremonyAddress?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  ceremonyMapsUrl?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  receptionName?: Prisma.StringFilter<"Invitation"> | string
+  receptionDate?: Prisma.StringFilter<"Invitation"> | string
+  receptionTime?: Prisma.StringFilter<"Invitation"> | string
+  receptionLocationName?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  receptionAddress?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  receptionMapsUrl?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  createdAt?: Prisma.DateTimeFilter<"Invitation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Invitation"> | Date | string
 }
 
 export type InvitationOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  message?: Prisma.SortOrder
+  templateId?: Prisma.SortOrder
+  brideFullName?: Prisma.SortOrder
+  brideNickname?: Prisma.SortOrderInput | Prisma.SortOrder
+  brideBirthOrder?: Prisma.SortOrderInput | Prisma.SortOrder
+  brideFather?: Prisma.SortOrderInput | Prisma.SortOrder
+  brideMother?: Prisma.SortOrderInput | Prisma.SortOrder
+  brideInstagram?: Prisma.SortOrderInput | Prisma.SortOrder
+  groomFullName?: Prisma.SortOrder
+  groomNickname?: Prisma.SortOrderInput | Prisma.SortOrder
+  groomBirthOrder?: Prisma.SortOrderInput | Prisma.SortOrder
+  groomFather?: Prisma.SortOrderInput | Prisma.SortOrder
+  groomMother?: Prisma.SortOrderInput | Prisma.SortOrder
+  groomInstagram?: Prisma.SortOrderInput | Prisma.SortOrder
+  ceremonyName?: Prisma.SortOrder
+  ceremonyDate?: Prisma.SortOrder
+  ceremonyTime?: Prisma.SortOrder
+  ceremonyLocationName?: Prisma.SortOrderInput | Prisma.SortOrder
+  ceremonyAddress?: Prisma.SortOrderInput | Prisma.SortOrder
+  ceremonyMapsUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  receptionName?: Prisma.SortOrder
+  receptionDate?: Prisma.SortOrder
+  receptionTime?: Prisma.SortOrder
+  receptionLocationName?: Prisma.SortOrderInput | Prisma.SortOrder
+  receptionAddress?: Prisma.SortOrderInput | Prisma.SortOrder
+  receptionMapsUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type InvitationWhereUniqueInput = Prisma.AtLeast<{
   id?: string
+  slug?: string
   AND?: Prisma.InvitationWhereInput | Prisma.InvitationWhereInput[]
   OR?: Prisma.InvitationWhereInput[]
   NOT?: Prisma.InvitationWhereInput | Prisma.InvitationWhereInput[]
-  slug?: Prisma.StringFilter<"Invitation"> | string
   title?: Prisma.StringFilter<"Invitation"> | string
-}, "id">
+  author?: Prisma.StringFilter<"Invitation"> | string
+  message?: Prisma.StringFilter<"Invitation"> | string
+  templateId?: Prisma.StringFilter<"Invitation"> | string
+  brideFullName?: Prisma.StringFilter<"Invitation"> | string
+  brideNickname?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  brideBirthOrder?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  brideFather?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  brideMother?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  brideInstagram?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  groomFullName?: Prisma.StringFilter<"Invitation"> | string
+  groomNickname?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  groomBirthOrder?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  groomFather?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  groomMother?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  groomInstagram?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  ceremonyName?: Prisma.StringFilter<"Invitation"> | string
+  ceremonyDate?: Prisma.StringFilter<"Invitation"> | string
+  ceremonyTime?: Prisma.StringFilter<"Invitation"> | string
+  ceremonyLocationName?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  ceremonyAddress?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  ceremonyMapsUrl?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  receptionName?: Prisma.StringFilter<"Invitation"> | string
+  receptionDate?: Prisma.StringFilter<"Invitation"> | string
+  receptionTime?: Prisma.StringFilter<"Invitation"> | string
+  receptionLocationName?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  receptionAddress?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  receptionMapsUrl?: Prisma.StringNullableFilter<"Invitation"> | string | null
+  createdAt?: Prisma.DateTimeFilter<"Invitation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Invitation"> | Date | string
+}, "id" | "slug">
 
 export type InvitationOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  message?: Prisma.SortOrder
+  templateId?: Prisma.SortOrder
+  brideFullName?: Prisma.SortOrder
+  brideNickname?: Prisma.SortOrderInput | Prisma.SortOrder
+  brideBirthOrder?: Prisma.SortOrderInput | Prisma.SortOrder
+  brideFather?: Prisma.SortOrderInput | Prisma.SortOrder
+  brideMother?: Prisma.SortOrderInput | Prisma.SortOrder
+  brideInstagram?: Prisma.SortOrderInput | Prisma.SortOrder
+  groomFullName?: Prisma.SortOrder
+  groomNickname?: Prisma.SortOrderInput | Prisma.SortOrder
+  groomBirthOrder?: Prisma.SortOrderInput | Prisma.SortOrder
+  groomFather?: Prisma.SortOrderInput | Prisma.SortOrder
+  groomMother?: Prisma.SortOrderInput | Prisma.SortOrder
+  groomInstagram?: Prisma.SortOrderInput | Prisma.SortOrder
+  ceremonyName?: Prisma.SortOrder
+  ceremonyDate?: Prisma.SortOrder
+  ceremonyTime?: Prisma.SortOrder
+  ceremonyLocationName?: Prisma.SortOrderInput | Prisma.SortOrder
+  ceremonyAddress?: Prisma.SortOrderInput | Prisma.SortOrder
+  ceremonyMapsUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  receptionName?: Prisma.SortOrder
+  receptionDate?: Prisma.SortOrder
+  receptionTime?: Prisma.SortOrder
+  receptionLocationName?: Prisma.SortOrderInput | Prisma.SortOrder
+  receptionAddress?: Prisma.SortOrderInput | Prisma.SortOrder
+  receptionMapsUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   _count?: Prisma.InvitationCountOrderByAggregateInput
   _max?: Prisma.InvitationMaxOrderByAggregateInput
   _min?: Prisma.InvitationMinOrderByAggregateInput
@@ -199,66 +518,389 @@ export type InvitationScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
   slug?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
   title?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
+  author?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
+  message?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
+  templateId?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
+  brideFullName?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
+  brideNickname?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  brideBirthOrder?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  brideFather?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  brideMother?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  brideInstagram?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  groomFullName?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
+  groomNickname?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  groomBirthOrder?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  groomFather?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  groomMother?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  groomInstagram?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  ceremonyName?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
+  ceremonyDate?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
+  ceremonyTime?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
+  ceremonyLocationName?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  ceremonyAddress?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  ceremonyMapsUrl?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  receptionName?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
+  receptionDate?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
+  receptionTime?: Prisma.StringWithAggregatesFilter<"Invitation"> | string
+  receptionLocationName?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  receptionAddress?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  receptionMapsUrl?: Prisma.StringNullableWithAggregatesFilter<"Invitation"> | string | null
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Invitation"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Invitation"> | Date | string
 }
 
 export type InvitationCreateInput = {
   id?: string
   slug: string
   title: string
+  author: string
+  message: string
+  templateId: string
+  brideFullName: string
+  brideNickname?: string | null
+  brideBirthOrder?: string | null
+  brideFather?: string | null
+  brideMother?: string | null
+  brideInstagram?: string | null
+  groomFullName: string
+  groomNickname?: string | null
+  groomBirthOrder?: string | null
+  groomFather?: string | null
+  groomMother?: string | null
+  groomInstagram?: string | null
+  ceremonyName?: string
+  ceremonyDate: string
+  ceremonyTime: string
+  ceremonyLocationName?: string | null
+  ceremonyAddress?: string | null
+  ceremonyMapsUrl?: string | null
+  receptionName?: string
+  receptionDate: string
+  receptionTime: string
+  receptionLocationName?: string | null
+  receptionAddress?: string | null
+  receptionMapsUrl?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type InvitationUncheckedCreateInput = {
   id?: string
   slug: string
   title: string
+  author: string
+  message: string
+  templateId: string
+  brideFullName: string
+  brideNickname?: string | null
+  brideBirthOrder?: string | null
+  brideFather?: string | null
+  brideMother?: string | null
+  brideInstagram?: string | null
+  groomFullName: string
+  groomNickname?: string | null
+  groomBirthOrder?: string | null
+  groomFather?: string | null
+  groomMother?: string | null
+  groomInstagram?: string | null
+  ceremonyName?: string
+  ceremonyDate: string
+  ceremonyTime: string
+  ceremonyLocationName?: string | null
+  ceremonyAddress?: string | null
+  ceremonyMapsUrl?: string | null
+  receptionName?: string
+  receptionDate: string
+  receptionTime: string
+  receptionLocationName?: string | null
+  receptionAddress?: string | null
+  receptionMapsUrl?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type InvitationUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  message?: Prisma.StringFieldUpdateOperationsInput | string
+  templateId?: Prisma.StringFieldUpdateOperationsInput | string
+  brideFullName?: Prisma.StringFieldUpdateOperationsInput | string
+  brideNickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideBirthOrder?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideFather?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideMother?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideInstagram?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomFullName?: Prisma.StringFieldUpdateOperationsInput | string
+  groomNickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomBirthOrder?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomFather?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomMother?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomInstagram?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ceremonyName?: Prisma.StringFieldUpdateOperationsInput | string
+  ceremonyDate?: Prisma.StringFieldUpdateOperationsInput | string
+  ceremonyTime?: Prisma.StringFieldUpdateOperationsInput | string
+  ceremonyLocationName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ceremonyAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ceremonyMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  receptionName?: Prisma.StringFieldUpdateOperationsInput | string
+  receptionDate?: Prisma.StringFieldUpdateOperationsInput | string
+  receptionTime?: Prisma.StringFieldUpdateOperationsInput | string
+  receptionLocationName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  receptionAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  receptionMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type InvitationUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  message?: Prisma.StringFieldUpdateOperationsInput | string
+  templateId?: Prisma.StringFieldUpdateOperationsInput | string
+  brideFullName?: Prisma.StringFieldUpdateOperationsInput | string
+  brideNickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideBirthOrder?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideFather?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideMother?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideInstagram?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomFullName?: Prisma.StringFieldUpdateOperationsInput | string
+  groomNickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomBirthOrder?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomFather?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomMother?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomInstagram?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ceremonyName?: Prisma.StringFieldUpdateOperationsInput | string
+  ceremonyDate?: Prisma.StringFieldUpdateOperationsInput | string
+  ceremonyTime?: Prisma.StringFieldUpdateOperationsInput | string
+  ceremonyLocationName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ceremonyAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ceremonyMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  receptionName?: Prisma.StringFieldUpdateOperationsInput | string
+  receptionDate?: Prisma.StringFieldUpdateOperationsInput | string
+  receptionTime?: Prisma.StringFieldUpdateOperationsInput | string
+  receptionLocationName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  receptionAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  receptionMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type InvitationCreateManyInput = {
   id?: string
   slug: string
   title: string
+  author: string
+  message: string
+  templateId: string
+  brideFullName: string
+  brideNickname?: string | null
+  brideBirthOrder?: string | null
+  brideFather?: string | null
+  brideMother?: string | null
+  brideInstagram?: string | null
+  groomFullName: string
+  groomNickname?: string | null
+  groomBirthOrder?: string | null
+  groomFather?: string | null
+  groomMother?: string | null
+  groomInstagram?: string | null
+  ceremonyName?: string
+  ceremonyDate: string
+  ceremonyTime: string
+  ceremonyLocationName?: string | null
+  ceremonyAddress?: string | null
+  ceremonyMapsUrl?: string | null
+  receptionName?: string
+  receptionDate: string
+  receptionTime: string
+  receptionLocationName?: string | null
+  receptionAddress?: string | null
+  receptionMapsUrl?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type InvitationUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  message?: Prisma.StringFieldUpdateOperationsInput | string
+  templateId?: Prisma.StringFieldUpdateOperationsInput | string
+  brideFullName?: Prisma.StringFieldUpdateOperationsInput | string
+  brideNickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideBirthOrder?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideFather?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideMother?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideInstagram?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomFullName?: Prisma.StringFieldUpdateOperationsInput | string
+  groomNickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomBirthOrder?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomFather?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomMother?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomInstagram?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ceremonyName?: Prisma.StringFieldUpdateOperationsInput | string
+  ceremonyDate?: Prisma.StringFieldUpdateOperationsInput | string
+  ceremonyTime?: Prisma.StringFieldUpdateOperationsInput | string
+  ceremonyLocationName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ceremonyAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ceremonyMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  receptionName?: Prisma.StringFieldUpdateOperationsInput | string
+  receptionDate?: Prisma.StringFieldUpdateOperationsInput | string
+  receptionTime?: Prisma.StringFieldUpdateOperationsInput | string
+  receptionLocationName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  receptionAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  receptionMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type InvitationUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  message?: Prisma.StringFieldUpdateOperationsInput | string
+  templateId?: Prisma.StringFieldUpdateOperationsInput | string
+  brideFullName?: Prisma.StringFieldUpdateOperationsInput | string
+  brideNickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideBirthOrder?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideFather?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideMother?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brideInstagram?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomFullName?: Prisma.StringFieldUpdateOperationsInput | string
+  groomNickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomBirthOrder?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomFather?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomMother?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  groomInstagram?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ceremonyName?: Prisma.StringFieldUpdateOperationsInput | string
+  ceremonyDate?: Prisma.StringFieldUpdateOperationsInput | string
+  ceremonyTime?: Prisma.StringFieldUpdateOperationsInput | string
+  ceremonyLocationName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ceremonyAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ceremonyMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  receptionName?: Prisma.StringFieldUpdateOperationsInput | string
+  receptionDate?: Prisma.StringFieldUpdateOperationsInput | string
+  receptionTime?: Prisma.StringFieldUpdateOperationsInput | string
+  receptionLocationName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  receptionAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  receptionMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type InvitationCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  message?: Prisma.SortOrder
+  templateId?: Prisma.SortOrder
+  brideFullName?: Prisma.SortOrder
+  brideNickname?: Prisma.SortOrder
+  brideBirthOrder?: Prisma.SortOrder
+  brideFather?: Prisma.SortOrder
+  brideMother?: Prisma.SortOrder
+  brideInstagram?: Prisma.SortOrder
+  groomFullName?: Prisma.SortOrder
+  groomNickname?: Prisma.SortOrder
+  groomBirthOrder?: Prisma.SortOrder
+  groomFather?: Prisma.SortOrder
+  groomMother?: Prisma.SortOrder
+  groomInstagram?: Prisma.SortOrder
+  ceremonyName?: Prisma.SortOrder
+  ceremonyDate?: Prisma.SortOrder
+  ceremonyTime?: Prisma.SortOrder
+  ceremonyLocationName?: Prisma.SortOrder
+  ceremonyAddress?: Prisma.SortOrder
+  ceremonyMapsUrl?: Prisma.SortOrder
+  receptionName?: Prisma.SortOrder
+  receptionDate?: Prisma.SortOrder
+  receptionTime?: Prisma.SortOrder
+  receptionLocationName?: Prisma.SortOrder
+  receptionAddress?: Prisma.SortOrder
+  receptionMapsUrl?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type InvitationMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  message?: Prisma.SortOrder
+  templateId?: Prisma.SortOrder
+  brideFullName?: Prisma.SortOrder
+  brideNickname?: Prisma.SortOrder
+  brideBirthOrder?: Prisma.SortOrder
+  brideFather?: Prisma.SortOrder
+  brideMother?: Prisma.SortOrder
+  brideInstagram?: Prisma.SortOrder
+  groomFullName?: Prisma.SortOrder
+  groomNickname?: Prisma.SortOrder
+  groomBirthOrder?: Prisma.SortOrder
+  groomFather?: Prisma.SortOrder
+  groomMother?: Prisma.SortOrder
+  groomInstagram?: Prisma.SortOrder
+  ceremonyName?: Prisma.SortOrder
+  ceremonyDate?: Prisma.SortOrder
+  ceremonyTime?: Prisma.SortOrder
+  ceremonyLocationName?: Prisma.SortOrder
+  ceremonyAddress?: Prisma.SortOrder
+  ceremonyMapsUrl?: Prisma.SortOrder
+  receptionName?: Prisma.SortOrder
+  receptionDate?: Prisma.SortOrder
+  receptionTime?: Prisma.SortOrder
+  receptionLocationName?: Prisma.SortOrder
+  receptionAddress?: Prisma.SortOrder
+  receptionMapsUrl?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type InvitationMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  message?: Prisma.SortOrder
+  templateId?: Prisma.SortOrder
+  brideFullName?: Prisma.SortOrder
+  brideNickname?: Prisma.SortOrder
+  brideBirthOrder?: Prisma.SortOrder
+  brideFather?: Prisma.SortOrder
+  brideMother?: Prisma.SortOrder
+  brideInstagram?: Prisma.SortOrder
+  groomFullName?: Prisma.SortOrder
+  groomNickname?: Prisma.SortOrder
+  groomBirthOrder?: Prisma.SortOrder
+  groomFather?: Prisma.SortOrder
+  groomMother?: Prisma.SortOrder
+  groomInstagram?: Prisma.SortOrder
+  ceremonyName?: Prisma.SortOrder
+  ceremonyDate?: Prisma.SortOrder
+  ceremonyTime?: Prisma.SortOrder
+  ceremonyLocationName?: Prisma.SortOrder
+  ceremonyAddress?: Prisma.SortOrder
+  ceremonyMapsUrl?: Prisma.SortOrder
+  receptionName?: Prisma.SortOrder
+  receptionDate?: Prisma.SortOrder
+  receptionTime?: Prisma.SortOrder
+  receptionLocationName?: Prisma.SortOrder
+  receptionAddress?: Prisma.SortOrder
+  receptionMapsUrl?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
 }
 
 
@@ -267,27 +909,143 @@ export type InvitationSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   id?: boolean
   slug?: boolean
   title?: boolean
+  author?: boolean
+  message?: boolean
+  templateId?: boolean
+  brideFullName?: boolean
+  brideNickname?: boolean
+  brideBirthOrder?: boolean
+  brideFather?: boolean
+  brideMother?: boolean
+  brideInstagram?: boolean
+  groomFullName?: boolean
+  groomNickname?: boolean
+  groomBirthOrder?: boolean
+  groomFather?: boolean
+  groomMother?: boolean
+  groomInstagram?: boolean
+  ceremonyName?: boolean
+  ceremonyDate?: boolean
+  ceremonyTime?: boolean
+  ceremonyLocationName?: boolean
+  ceremonyAddress?: boolean
+  ceremonyMapsUrl?: boolean
+  receptionName?: boolean
+  receptionDate?: boolean
+  receptionTime?: boolean
+  receptionLocationName?: boolean
+  receptionAddress?: boolean
+  receptionMapsUrl?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["invitation"]>
 
 export type InvitationSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   slug?: boolean
   title?: boolean
+  author?: boolean
+  message?: boolean
+  templateId?: boolean
+  brideFullName?: boolean
+  brideNickname?: boolean
+  brideBirthOrder?: boolean
+  brideFather?: boolean
+  brideMother?: boolean
+  brideInstagram?: boolean
+  groomFullName?: boolean
+  groomNickname?: boolean
+  groomBirthOrder?: boolean
+  groomFather?: boolean
+  groomMother?: boolean
+  groomInstagram?: boolean
+  ceremonyName?: boolean
+  ceremonyDate?: boolean
+  ceremonyTime?: boolean
+  ceremonyLocationName?: boolean
+  ceremonyAddress?: boolean
+  ceremonyMapsUrl?: boolean
+  receptionName?: boolean
+  receptionDate?: boolean
+  receptionTime?: boolean
+  receptionLocationName?: boolean
+  receptionAddress?: boolean
+  receptionMapsUrl?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["invitation"]>
 
 export type InvitationSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   slug?: boolean
   title?: boolean
+  author?: boolean
+  message?: boolean
+  templateId?: boolean
+  brideFullName?: boolean
+  brideNickname?: boolean
+  brideBirthOrder?: boolean
+  brideFather?: boolean
+  brideMother?: boolean
+  brideInstagram?: boolean
+  groomFullName?: boolean
+  groomNickname?: boolean
+  groomBirthOrder?: boolean
+  groomFather?: boolean
+  groomMother?: boolean
+  groomInstagram?: boolean
+  ceremonyName?: boolean
+  ceremonyDate?: boolean
+  ceremonyTime?: boolean
+  ceremonyLocationName?: boolean
+  ceremonyAddress?: boolean
+  ceremonyMapsUrl?: boolean
+  receptionName?: boolean
+  receptionDate?: boolean
+  receptionTime?: boolean
+  receptionLocationName?: boolean
+  receptionAddress?: boolean
+  receptionMapsUrl?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["invitation"]>
 
 export type InvitationSelectScalar = {
   id?: boolean
   slug?: boolean
   title?: boolean
+  author?: boolean
+  message?: boolean
+  templateId?: boolean
+  brideFullName?: boolean
+  brideNickname?: boolean
+  brideBirthOrder?: boolean
+  brideFather?: boolean
+  brideMother?: boolean
+  brideInstagram?: boolean
+  groomFullName?: boolean
+  groomNickname?: boolean
+  groomBirthOrder?: boolean
+  groomFather?: boolean
+  groomMother?: boolean
+  groomInstagram?: boolean
+  ceremonyName?: boolean
+  ceremonyDate?: boolean
+  ceremonyTime?: boolean
+  ceremonyLocationName?: boolean
+  ceremonyAddress?: boolean
+  ceremonyMapsUrl?: boolean
+  receptionName?: boolean
+  receptionDate?: boolean
+  receptionTime?: boolean
+  receptionLocationName?: boolean
+  receptionAddress?: boolean
+  receptionMapsUrl?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }
 
-export type InvitationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "title", ExtArgs["result"]["invitation"]>
+export type InvitationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "title" | "author" | "message" | "templateId" | "brideFullName" | "brideNickname" | "brideBirthOrder" | "brideFather" | "brideMother" | "brideInstagram" | "groomFullName" | "groomNickname" | "groomBirthOrder" | "groomFather" | "groomMother" | "groomInstagram" | "ceremonyName" | "ceremonyDate" | "ceremonyTime" | "ceremonyLocationName" | "ceremonyAddress" | "ceremonyMapsUrl" | "receptionName" | "receptionDate" | "receptionTime" | "receptionLocationName" | "receptionAddress" | "receptionMapsUrl" | "createdAt" | "updatedAt", ExtArgs["result"]["invitation"]>
 
 export type $InvitationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Invitation"
@@ -296,6 +1054,35 @@ export type $InvitationPayload<ExtArgs extends runtime.Types.Extensions.Internal
     id: string
     slug: string
     title: string
+    author: string
+    message: string
+    templateId: string
+    brideFullName: string
+    brideNickname: string | null
+    brideBirthOrder: string | null
+    brideFather: string | null
+    brideMother: string | null
+    brideInstagram: string | null
+    groomFullName: string
+    groomNickname: string | null
+    groomBirthOrder: string | null
+    groomFather: string | null
+    groomMother: string | null
+    groomInstagram: string | null
+    ceremonyName: string
+    ceremonyDate: string
+    ceremonyTime: string
+    ceremonyLocationName: string | null
+    ceremonyAddress: string | null
+    ceremonyMapsUrl: string | null
+    receptionName: string
+    receptionDate: string
+    receptionTime: string
+    receptionLocationName: string | null
+    receptionAddress: string | null
+    receptionMapsUrl: string | null
+    createdAt: Date
+    updatedAt: Date
   }, ExtArgs["result"]["invitation"]>
   composites: {}
 }
@@ -722,6 +1509,35 @@ export interface InvitationFieldRefs {
   readonly id: Prisma.FieldRef<"Invitation", 'String'>
   readonly slug: Prisma.FieldRef<"Invitation", 'String'>
   readonly title: Prisma.FieldRef<"Invitation", 'String'>
+  readonly author: Prisma.FieldRef<"Invitation", 'String'>
+  readonly message: Prisma.FieldRef<"Invitation", 'String'>
+  readonly templateId: Prisma.FieldRef<"Invitation", 'String'>
+  readonly brideFullName: Prisma.FieldRef<"Invitation", 'String'>
+  readonly brideNickname: Prisma.FieldRef<"Invitation", 'String'>
+  readonly brideBirthOrder: Prisma.FieldRef<"Invitation", 'String'>
+  readonly brideFather: Prisma.FieldRef<"Invitation", 'String'>
+  readonly brideMother: Prisma.FieldRef<"Invitation", 'String'>
+  readonly brideInstagram: Prisma.FieldRef<"Invitation", 'String'>
+  readonly groomFullName: Prisma.FieldRef<"Invitation", 'String'>
+  readonly groomNickname: Prisma.FieldRef<"Invitation", 'String'>
+  readonly groomBirthOrder: Prisma.FieldRef<"Invitation", 'String'>
+  readonly groomFather: Prisma.FieldRef<"Invitation", 'String'>
+  readonly groomMother: Prisma.FieldRef<"Invitation", 'String'>
+  readonly groomInstagram: Prisma.FieldRef<"Invitation", 'String'>
+  readonly ceremonyName: Prisma.FieldRef<"Invitation", 'String'>
+  readonly ceremonyDate: Prisma.FieldRef<"Invitation", 'String'>
+  readonly ceremonyTime: Prisma.FieldRef<"Invitation", 'String'>
+  readonly ceremonyLocationName: Prisma.FieldRef<"Invitation", 'String'>
+  readonly ceremonyAddress: Prisma.FieldRef<"Invitation", 'String'>
+  readonly ceremonyMapsUrl: Prisma.FieldRef<"Invitation", 'String'>
+  readonly receptionName: Prisma.FieldRef<"Invitation", 'String'>
+  readonly receptionDate: Prisma.FieldRef<"Invitation", 'String'>
+  readonly receptionTime: Prisma.FieldRef<"Invitation", 'String'>
+  readonly receptionLocationName: Prisma.FieldRef<"Invitation", 'String'>
+  readonly receptionAddress: Prisma.FieldRef<"Invitation", 'String'>
+  readonly receptionMapsUrl: Prisma.FieldRef<"Invitation", 'String'>
+  readonly createdAt: Prisma.FieldRef<"Invitation", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"Invitation", 'DateTime'>
 }
     
 

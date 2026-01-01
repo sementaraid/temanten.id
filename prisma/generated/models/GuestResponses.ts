@@ -30,8 +30,8 @@ export type GuestResponsesMinAggregateOutputType = {
   name: string | null
   message: string | null
   confirmation: string | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type GuestResponsesMaxAggregateOutputType = {
@@ -40,8 +40,8 @@ export type GuestResponsesMaxAggregateOutputType = {
   name: string | null
   message: string | null
   confirmation: string | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type GuestResponsesCountAggregateOutputType = {
@@ -50,8 +50,8 @@ export type GuestResponsesCountAggregateOutputType = {
   name: number
   message: number
   confirmation: number
-  created_at: number
-  updated_at: number
+  createdAt: number
+  updatedAt: number
   _all: number
 }
 
@@ -62,8 +62,8 @@ export type GuestResponsesMinAggregateInputType = {
   name?: true
   message?: true
   confirmation?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type GuestResponsesMaxAggregateInputType = {
@@ -72,8 +72,8 @@ export type GuestResponsesMaxAggregateInputType = {
   name?: true
   message?: true
   confirmation?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type GuestResponsesCountAggregateInputType = {
@@ -82,8 +82,8 @@ export type GuestResponsesCountAggregateInputType = {
   name?: true
   message?: true
   confirmation?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
   _all?: true
 }
 
@@ -165,8 +165,8 @@ export type GuestResponsesGroupByOutputType = {
   name: string
   message: string
   confirmation: string
-  created_at: Date
-  updated_at: Date
+  createdAt: Date
+  updatedAt: Date
   _count: GuestResponsesCountAggregateOutputType | null
   _min: GuestResponsesMinAggregateOutputType | null
   _max: GuestResponsesMaxAggregateOutputType | null
@@ -196,8 +196,8 @@ export type GuestResponsesWhereInput = {
   name?: Prisma.StringFilter<"GuestResponses"> | string
   message?: Prisma.StringFilter<"GuestResponses"> | string
   confirmation?: Prisma.StringFilter<"GuestResponses"> | string
-  created_at?: Prisma.DateTimeFilter<"GuestResponses"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"GuestResponses"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"GuestResponses"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"GuestResponses"> | Date | string
 }
 
 export type GuestResponsesOrderByWithRelationInput = {
@@ -206,8 +206,8 @@ export type GuestResponsesOrderByWithRelationInput = {
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   confirmation?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type GuestResponsesWhereUniqueInput = Prisma.AtLeast<{
@@ -219,8 +219,8 @@ export type GuestResponsesWhereUniqueInput = Prisma.AtLeast<{
   name?: Prisma.StringFilter<"GuestResponses"> | string
   message?: Prisma.StringFilter<"GuestResponses"> | string
   confirmation?: Prisma.StringFilter<"GuestResponses"> | string
-  created_at?: Prisma.DateTimeFilter<"GuestResponses"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"GuestResponses"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"GuestResponses"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"GuestResponses"> | Date | string
 }, "id">
 
 export type GuestResponsesOrderByWithAggregationInput = {
@@ -229,8 +229,8 @@ export type GuestResponsesOrderByWithAggregationInput = {
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   confirmation?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   _count?: Prisma.GuestResponsesCountOrderByAggregateInput
   _max?: Prisma.GuestResponsesMaxOrderByAggregateInput
   _min?: Prisma.GuestResponsesMinOrderByAggregateInput
@@ -245,8 +245,8 @@ export type GuestResponsesScalarWhereWithAggregatesInput = {
   name?: Prisma.StringWithAggregatesFilter<"GuestResponses"> | string
   message?: Prisma.StringWithAggregatesFilter<"GuestResponses"> | string
   confirmation?: Prisma.StringWithAggregatesFilter<"GuestResponses"> | string
-  created_at?: Prisma.DateTimeWithAggregatesFilter<"GuestResponses"> | Date | string
-  updated_at?: Prisma.DateTimeWithAggregatesFilter<"GuestResponses"> | Date | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"GuestResponses"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"GuestResponses"> | Date | string
 }
 
 export type GuestResponsesCreateInput = {
@@ -255,8 +255,8 @@ export type GuestResponsesCreateInput = {
   name: string
   message: string
   confirmation: string
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type GuestResponsesUncheckedCreateInput = {
@@ -265,8 +265,8 @@ export type GuestResponsesUncheckedCreateInput = {
   name: string
   message: string
   confirmation: string
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type GuestResponsesUpdateInput = {
@@ -275,8 +275,8 @@ export type GuestResponsesUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   confirmation?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type GuestResponsesUncheckedUpdateInput = {
@@ -285,8 +285,8 @@ export type GuestResponsesUncheckedUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   confirmation?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type GuestResponsesCreateManyInput = {
@@ -295,8 +295,8 @@ export type GuestResponsesCreateManyInput = {
   name: string
   message: string
   confirmation: string
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type GuestResponsesUpdateManyMutationInput = {
@@ -305,8 +305,8 @@ export type GuestResponsesUpdateManyMutationInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   confirmation?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type GuestResponsesUncheckedUpdateManyInput = {
@@ -315,8 +315,8 @@ export type GuestResponsesUncheckedUpdateManyInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   confirmation?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type GuestResponsesCountOrderByAggregateInput = {
@@ -325,8 +325,8 @@ export type GuestResponsesCountOrderByAggregateInput = {
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   confirmation?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type GuestResponsesMaxOrderByAggregateInput = {
@@ -335,8 +335,8 @@ export type GuestResponsesMaxOrderByAggregateInput = {
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   confirmation?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type GuestResponsesMinOrderByAggregateInput = {
@@ -345,8 +345,8 @@ export type GuestResponsesMinOrderByAggregateInput = {
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   confirmation?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 
@@ -357,8 +357,8 @@ export type GuestResponsesSelect<ExtArgs extends runtime.Types.Extensions.Intern
   name?: boolean
   message?: boolean
   confirmation?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["guestResponses"]>
 
 export type GuestResponsesSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -367,8 +367,8 @@ export type GuestResponsesSelectCreateManyAndReturn<ExtArgs extends runtime.Type
   name?: boolean
   message?: boolean
   confirmation?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["guestResponses"]>
 
 export type GuestResponsesSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -377,8 +377,8 @@ export type GuestResponsesSelectUpdateManyAndReturn<ExtArgs extends runtime.Type
   name?: boolean
   message?: boolean
   confirmation?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["guestResponses"]>
 
 export type GuestResponsesSelectScalar = {
@@ -387,11 +387,11 @@ export type GuestResponsesSelectScalar = {
   name?: boolean
   message?: boolean
   confirmation?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }
 
-export type GuestResponsesOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "name" | "message" | "confirmation" | "created_at" | "updated_at", ExtArgs["result"]["guestResponses"]>
+export type GuestResponsesOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "name" | "message" | "confirmation" | "createdAt" | "updatedAt", ExtArgs["result"]["guestResponses"]>
 
 export type $GuestResponsesPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "GuestResponses"
@@ -402,8 +402,8 @@ export type $GuestResponsesPayload<ExtArgs extends runtime.Types.Extensions.Inte
     name: string
     message: string
     confirmation: string
-    created_at: Date
-    updated_at: Date
+    createdAt: Date
+    updatedAt: Date
   }, ExtArgs["result"]["guestResponses"]>
   composites: {}
 }
@@ -832,8 +832,8 @@ export interface GuestResponsesFieldRefs {
   readonly name: Prisma.FieldRef<"GuestResponses", 'String'>
   readonly message: Prisma.FieldRef<"GuestResponses", 'String'>
   readonly confirmation: Prisma.FieldRef<"GuestResponses", 'String'>
-  readonly created_at: Prisma.FieldRef<"GuestResponses", 'DateTime'>
-  readonly updated_at: Prisma.FieldRef<"GuestResponses", 'DateTime'>
+  readonly createdAt: Prisma.FieldRef<"GuestResponses", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"GuestResponses", 'DateTime'>
 }
     
 

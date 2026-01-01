@@ -9,6 +9,10 @@ import { Login } from "./pages/login"
 import { Register } from "./pages/register"
 import { DashboardLayout } from "./layout/dashboard"
 import MyInvitation from "@/pages/my-invitation"
+import MyInvitationCreate from "./pages/my-invitation/create"
+import InvitationBuilder from "./pages/my-invitation/builder"
+import InvitationGuest from "./pages/my-invitation/guest"
+import InvitationGuestMessage from "./pages/my-invitation/guest-message"
 
 const routeReleasedByVersion = {
   '1766308273810': {
@@ -62,6 +66,22 @@ const routeReleasedByVersion = {
       {
         path: 'my-invitations/list',
         Component: MyInvitation
+      },
+      {
+        path: 'my-invitations/create',
+        Component: MyInvitationCreate
+      },
+      {
+        path: 'my-invitations/builder',
+        Component: InvitationBuilder
+      },
+      {
+        path: 'my-invitations/guests',
+        Component: InvitationGuest
+      },
+      {
+        path: 'my-invitations/guests-messages',
+        Component: InvitationGuestMessage
       }
     ]
   }

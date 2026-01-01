@@ -10,7 +10,7 @@ export class GuestResponseService {
         name: input.name,
         message: input.message,
         confirmation: input.confirmation,
-        created_at: new Date(),
+        createdAt: new Date(),
       }
     })
   }

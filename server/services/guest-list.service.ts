@@ -11,7 +11,7 @@ export class GuestListService {
         slug: input.slug,
         name: input.name,
         message: input.message,
-        created_at: new Date(),
+        createdAt: new Date(),
         phone: input.phone,
         whatsapp: input.whatsapp
       }
