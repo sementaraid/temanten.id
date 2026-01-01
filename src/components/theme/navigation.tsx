@@ -1,8 +1,7 @@
-import { ArrowLeft, Eye, MessageCircle, Settings, Users } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
+import type { ReactNode } from "react"
 import { useNavigate } from "react-router"
-import { useState, type ReactNode } from "react";
 
-type TabType = 'builder' | 'guests' | 'messages'
 type NavigationProps = {
   // You can add props here if needed in the future
   previousUrl: string,
@@ -14,14 +13,6 @@ type NavigationProps = {
 
 export const Navigation = ({ previousUrl, title, subTitle, RightSection, BellowSection }: NavigationProps) => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState<TabType>('builder')
-
-  const tabs = [
-    { id: 'builder', name: 'Builder', icon: Settings, description: 'Edit invitation design' },
-    { id: 'guests', name: 'Guest List', icon: Users, description: 'Manage your guests' },
-    { id: 'messages', name: 'Messages', icon: MessageCircle, description: 'View guest wishes' },
-  ]
-
   return (
     <div className="bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-4">
