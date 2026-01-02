@@ -49,7 +49,7 @@ export class AuthGuard {
    * - Users go to /my-invitations/list
    * - Non-authenticated users go to /sign-in
    */
-  static redirectByRole(req: Request, res: Response, next: NextFunction): void {
+  static redirectByRole(req: Request, res: Response): void {
     const token = req.cookies?.token
 
     // No token - redirect to login
