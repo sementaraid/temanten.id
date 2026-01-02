@@ -1,4 +1,4 @@
-import { type Response, type Request, type NextFunction } from 'express'
+import type { Response, Request, NextFunction } from 'express'
 import jwt from 'jsonwebtoken'
 import config from '@server/config'
 import { AppError } from '@server/utils/errors'

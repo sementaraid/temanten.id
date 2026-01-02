@@ -1,4 +1,4 @@
-import { type Request, type Response } from 'express'
+import type { Request, Response } from 'express'
 import { type GuestResponses } from '@database/generated/client'
 import { GuestResponseService } from '@server/services/guest-response.service'
 

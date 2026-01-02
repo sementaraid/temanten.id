@@ -1,4 +1,4 @@
-import { type Response, type Request } from 'express';
+import type { Response, Request } from 'express';
 import { AuthService } from '@server/services/auth.service';
 import { type LoginRequest } from '@shared/types';
 import config from '@server/config';
