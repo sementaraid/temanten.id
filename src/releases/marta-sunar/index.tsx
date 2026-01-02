@@ -9,17 +9,13 @@ import { LoveStory } from '@/components/section/love-story'
 import { Audio } from '@/components/features/audio'
 import { SplashScreen } from '@/components/section/welcome'
 import { TemantenProvider } from '@/context'
-import { cn } from '@/lib/utils'
+import { WindowFrame } from '@/components/theme/window'
 import '@/releases/marta-sunar/styles/main.css'
 
 const Page = () => {
-  const isIframe = window.self !== window.top;
   return (
     <TemantenProvider>
-      <div className={cn(
-        "w-full m-auto bg-[beige]",
-        !isIframe && 'max-w-screen-sm'
-      )}>
+      <WindowFrame>
         <SplashScreen />
         <Audio />
         <SnowfallEffect />
@@ -30,7 +26,7 @@ const Page = () => {
         <LoveStory />
         <Comments />
         <Footer />
-      </div>
+      </WindowFrame>
     </TemantenProvider>
   )
 }
