@@ -41,6 +41,6 @@
   },
   "include": [
     "shared",
-    "src"
-, "server/utils/app.ts"  ]
+    "src",
+  ]
 }

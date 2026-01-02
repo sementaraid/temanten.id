@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
-import { distVersion } from './app.config.ts'
+import { distVersion } from '../app.config.ts'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -21,12 +21,17 @@ export default defineConfig({
     external:[
       'react',
       'react-dom',
-      'react-helmet-async',
+      'react-dom/server',
       'react-router'
     ],
-    noExternal:[]
+    noExternal:[
+      'react-helmet-async',
+    ]
   },
   build: {
-    outDir: `dist/${distVersion}`
+    rollupOptions:{
+      input: path.resolve(process.cwd(), 'index.html')
+    },
+    outDir: `dist/${distVersion}/client`
   }
 })

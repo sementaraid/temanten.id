@@ -8,7 +8,8 @@ import {
 } from 'react'
 
 import { TEMANTEN_DEFAULT_VALUE } from './constant'
-import type { TemantenContexTypet } from './types'
+import type { AuthContextValue, AuthState, TemantenContexTypet } from './types'
+import type { IJWTPayload } from '@shared/types'
 
 interface TemantenProviderProps {
   children: ReactNode

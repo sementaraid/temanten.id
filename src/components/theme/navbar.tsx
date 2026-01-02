@@ -1,17 +1,10 @@
-import type { IJWTPayload } from "@shared/types"
+import { useAuth } from "@/hooks/useAuth"
 import { motion } from "motion/react"
-import { useEffect, useState } from "react"
 import { Link } from "react-router"
 
 export const Navbar = () => {
-  const [auth, setAuth] = useState<{ isLoggedIn: boolean; user: Partial<IJWTPayload>; } | null>(null)
+  const auth = useAuth()
 
-  useEffect(() => {
-    if (window) {
-      setAuth(window.__AUTH__)
-    }
-  },[])
-  
   return (
     <nav className="border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">

@@ -3,7 +3,7 @@ import { Mail, Lock, Eye, EyeOff } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
+import z from 'zod'
 import useSWRMutation from 'swr/mutation'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -26,7 +26,7 @@ export const Login = () => {
     Error,
     string,
     LoginSchema
-  >(`http://localhost:3000/api/auth/sign-in`, postFetcher())
+  >(`/api/auth/sign-in`, postFetcher())
 
   const {
     register,

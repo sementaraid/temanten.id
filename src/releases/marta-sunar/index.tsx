@@ -9,8 +9,8 @@ import { LoveStory } from '@/components/section/love-story'
 import { Audio } from '@/components/features/audio'
 import { SplashScreen } from '@/components/section/welcome'
 import { TemantenProvider } from '@/context'
-import '@/releases/marta-sunar/styles/main.css'
 import { cn } from '@/lib/utils'
+import '@/releases/marta-sunar/styles/main.css'
 
 const Page = () => {
   const isIframe = window.self !== window.top;

@@ -4,9 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "client:dev": "vite dev",
     "dev": "cross-env NODE_ENV=development tsx server/index.ts",
-    "build": "vite build",
+    "build:client": "vite build --config .vite/dev.config.ts",
+    "build:server": "vite build --config .vite/prod.config.ts",
+    "build": "pnpm build:client && pnpm build:server",
     "start": "cross-env NODE_ENV=production tsx server/index.ts",
     "prisma": "prisma",
     "typecheck": "tsc --noEmit",

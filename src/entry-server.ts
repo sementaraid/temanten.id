@@ -40,8 +40,7 @@ interface RenderResult {
  * @example
  * const result = await renderApp({
  *   url: '/dashboard',
- *   helmetContext: {},
- *   authState: { isLoggedIn: true, user: { name: 'John' } }
+ *   authState: { isLoggedIn: true, user: { id: '1', name: 'John', email: 'john@example.com' } }
  * })
  */
 export async function renderApp(options: RenderAppOptions): Promise<RenderResult> {
@@ -77,6 +76,7 @@ export async function renderApp(options: RenderAppOptions): Promise<RenderResult
     const staticRouter = createStaticRouter(handler.dataRoutes, context)
 
     // 6. Render app to HTML string with providers
+    //    - AuthProvider supplies auth state to the entire app
     //    - HelmetProvider collects meta tags (title, meta, link)
     //    - StaticRouterProvider provides router context
     const markup = renderToString(

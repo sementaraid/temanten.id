@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { cn } from '@/lib/utils'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
+import z from 'zod'
 import { createInvitationSchema } from '@shared/schema'
 import { Navigation } from '@/components/theme/navigation'
 

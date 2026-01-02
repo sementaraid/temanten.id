@@ -141,8 +141,6 @@ export class AuthGuard {
     try {
       // Decode token to verify authentication
       const decoded = jwt.verify(token, config.jwt.secret || 'secret') as IJWTPayload
-
-      console.log('decoded', decoded)
       const role = decoded.role?.toLowerCase()
 
       // Allow both 'user' and 'admin' roles

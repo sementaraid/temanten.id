@@ -80,7 +80,6 @@ router.get(
  */
 router.get(
   '/',
-  AuthGuard.redirectByRole,
   (_req: Request, _res: Response, next: NextFunction) => next()
 )
 

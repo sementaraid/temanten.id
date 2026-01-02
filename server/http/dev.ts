@@ -8,7 +8,8 @@ export const setupDevServer = async (app: Express) => {
   const vite = await createViteServer({
     root,
     appType: 'custom',
-    server: { middlewareMode: true }
+    server: { middlewareMode: true },
+    configFile: path.resolve(root, '.vite', 'dev.config.ts')
   })
 
   app.use(vite.middlewares)
@@ -41,7 +42,7 @@ export const setupDevServer = async (app: Express) => {
         user,
       }
 
-      const { renderApp } = await vite.ssrLoadModule(path.resolve(process.cwd(), 'server', 'utils', 'app.ts'))
+      const { renderApp } = await vite.ssrLoadModule(path.resolve(process.cwd(), 'src', 'entry-server.ts'))
       const { redirect, helmetContext } = await renderApp({ url })
 
       if (redirect) {
