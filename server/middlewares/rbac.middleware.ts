@@ -1,21 +1,20 @@
-import type { Response, NextFunction } from 'express'
+import type { Response, NextFunction, Request } from 'express'
 import config from '@server/config'
-import type { AuthRequest } from '@shared/types'
 
 export class RBACMiddleware {
   static allow(requiredPermissions: string | string[]): (
-    req: AuthRequest,
+    req: Request,
     res: Response,
     next: NextFunction
   ) => void {
     return (req, res, next): void => {
       try {
-        if (!req.auth) {
+        if (!req.cookies.token) {
           res.status(401).json({ message: 'User not authenticated' })
           return
         }
 
-        const userRole = req.auth.role
+        const userRole = req.cookies.token
         const userPermissions = config.rolePermissions[userRole] ?? []
 
         const required = Array.isArray(requiredPermissions)

@@ -1,19 +1,13 @@
-import { type Response, type NextFunction } from 'express'
+import { type Response, type Request, type NextFunction } from 'express'
 import jwt from 'jsonwebtoken'
-
 import config from '@server/config'
-import { type AuthRequest } from '@shared/types'
 import { AppError } from '@server/utils/errors'
 
 export class AuthMiddleware {
-  static verify(req: AuthRequest, res: Response, next: NextFunction): void {
+  static verify(req: Request, res: Response, next: NextFunction): void {
     try {
       const token = AuthMiddleware.extractToken(req)
-
-      if (!token) {
-        throw new AppError('Token tidak ditemukan', 401)
-      }
-
+      if (!token) throw new AppError('Token tidak ditemukan', 401)
       const decoded = jwt.verify(token, config.jwt.secret)
       if(!decoded) throw decoded
       next()
@@ -27,17 +21,14 @@ export class AuthMiddleware {
    * 1. Authorization: Bearer <token>
    * 2. Cookie: token
    */
-  private static extractToken(req: AuthRequest): string | null {
+  private static extractToken(req: Request): string | null {
     const authHeader = req.headers.authorization
     if (authHeader?.startsWith('Bearer ')) {
       return authHeader.split(' ')[1]
     }
 
     const cookieToken = req.cookies?.token
-    if (cookieToken) {
-      return cookieToken
-    }
-
+    if (cookieToken) return cookieToken
     return null
   }
 

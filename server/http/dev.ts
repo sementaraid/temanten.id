@@ -1,7 +1,7 @@
 import { type Express } from 'express'
 import fs from 'fs'
 import path from 'path'
-import { root } from '../constant'
+import { root } from '@server/constant'
 
 export const setupDevServer = async (app: Express) => {
   const { createServer: createViteServer } = await import('vite')
@@ -41,11 +41,35 @@ export const setupDevServer = async (app: Express) => {
         user,
       }
 
+      const { renderApp } = await vite.ssrLoadModule(path.resolve(process.cwd(), 'server', 'utils', 'app.ts'))
+      const { redirect, helmetContext } = await renderApp({ url })
+
+      if (redirect) {
+        res.redirect(redirect.status, redirect.location || '/')
+        return
+      }
+
       // 3. Inject state
-      html = await vite.transformIndexHtml(url, html)
+      const { helmet } = helmetContext
+      const helmetTitle = helmet?.title?.toString() ?? ''
+      const helmetMeta = helmet?.meta?.toString() ?? ''
+      const helmetLink = helmet?.link?.toString() ?? ''
+
+      // 9. Inject helmet tags into <head>
+      const defaultTitle = '<title>Undangan Pernikahan</title>'
+      const shouldRenderHelmetTitle = helmetTitle !== '<title data-rh="true"></title>'
+
+      if (html.includes(defaultTitle) && shouldRenderHelmetTitle) {
+        html = html.replace(defaultTitle, helmetTitle)
+      }
+
       html = html.replace(
         '</head>',
-        `<script id="__auth_script__">window.__AUTH__ = ${JSON.stringify(authState)}</script></head>`
+        `
+        ${helmetMeta}
+        ${helmetLink}
+        <script id="__auth_script__">window.__AUTH__ = ${JSON.stringify(authState)}</script></head>
+        `
       )
 
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html)

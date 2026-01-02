@@ -13,12 +13,11 @@ import {
 import useSWRMutation from "swr/mutation"
 import { postFetcher } from "@/lib/fetcher"
 import { useNavigate } from "react-router"
+import { authCallback } from "@/lib/auth"
 
 type LogoutResponse = {
   message: string
 }
-
-const AUTH_SCRIPT_ID = '__auth_script__'
 
 export const LogoutDialog = () => {
   const navigate = useNavigate()
@@ -32,20 +31,7 @@ export const LogoutDialog = () => {
     try {
       const response = await trigger()
       if (!response) throw Error('Logout Failed')
-
-      const existing = document.getElementById(AUTH_SCRIPT_ID)
-      if (existing) {
-        existing.remove()
-      }
-
-      const script = document.createElement('script')
-      script.id = AUTH_SCRIPT_ID
-      script.type = 'text/javascript'
-      script.textContent = `window.__AUTH__ = ${JSON.stringify({
-        isLoggedIn: false,
-        user: {}
-      })}`
-      document.head.appendChild(script)
+      authCallback('')
       navigate('/')
     } catch (error) {
       console.error("Logout failed:", error)

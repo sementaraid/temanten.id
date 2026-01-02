@@ -32,6 +32,7 @@
     },
   },
   "include": [
+    "src",
     "prisma",
     "server",
     "shared",

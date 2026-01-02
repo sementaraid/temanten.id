@@ -17,6 +17,15 @@ export default defineConfig({
       '@shared': path.resolve(process.cwd(), 'shared'),
     },
   },
+  ssr:{
+    external:[
+      'react',
+      'react-dom',
+      'react-helmet-async',
+      'react-router'
+    ],
+    noExternal:[]
+  },
   build: {
     outDir: `dist/${distVersion}`
   }

@@ -1,7 +1,17 @@
+import type { IJWTPayload } from "@shared/types"
 import { motion } from "motion/react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router"
 
 export const Navbar = () => {
+  const [auth, setAuth] = useState<{ isLoggedIn: boolean; user: Partial<IJWTPayload>; } | null>(null)
+
+  useEffect(() => {
+    if (window) {
+      setAuth(window.__AUTH__)
+    }
+  },[])
+  
   return (
     <nav className="border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -19,13 +29,13 @@ export const Navbar = () => {
           transition={{ duration: 0.6 }}
           className="flex gap-8 text-sm text-gray-600"
         >
-          {window.__AUTH__.isLoggedIn && window.__AUTH__.user.role === 'admin' && (
+          {auth?.isLoggedIn && auth?.user.role === 'admin' && (
             <Link to="/dashboard">Dashboard</Link>
           )}
-          {window.__AUTH__.isLoggedIn && window.__AUTH__.user.role === 'user' && (
+          {auth?.isLoggedIn && auth?.user.role === 'user' && (
             <Link to="/my-invitations/list">My Invitations</Link>
           )}
-          {!window.__AUTH__.isLoggedIn && (
+          {!auth?.isLoggedIn && (
             <>
               <Link to="/sign-in" className="hover:text-gray-900 transition-colors">Sign In</Link>
               <Link to="/sign-up" className="hover:text-gray-900 transition-colors">Sign Up</Link>

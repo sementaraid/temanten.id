@@ -56,14 +56,6 @@ const routeReleasedByVersion = {
     Component: DashboardLayout,
     children: [
       {
-        path: 'dashboard',
-        Component: () => <>hai</>
-      },
-      {
-        path: 'customers',
-        Component: () => <>customers</>
-      },
-      {
         path: 'my-invitations/list',
         Component: MyInvitation
       },

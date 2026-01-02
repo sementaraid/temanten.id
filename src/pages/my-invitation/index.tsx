@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { Navigation } from "@/components/theme/navigation";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -45,8 +46,35 @@ export default function MyInvitation() {
     },
   ]
 
+  // Calculate totals
+  const totalGuests = invitations.reduce((sum, inv) => sum + inv.guests, 0)
+  const totalConfirmed = invitations.reduce((sum, inv) => sum + inv.confirmed, 0)
+  const totalViews = invitations.reduce((sum, inv) => sum + inv.views, 0)
+
   return (
     <>
+      {/* Helmet Meta Tags */}
+      <Helmet>
+        <title>My Invitations - Manage Your Wedding Invites</title>
+        <meta 
+          name="description" 
+          content={`Manage your wedding invitations. ${invitations.length} invitations created, ${totalConfirmed} confirmed guests, ${totalViews} total views.`}
+        />
+        <meta property="og:title" content="My Invitations - Manage Your Wedding Invites" />
+        <meta 
+          property="og:description" 
+          content="Create, manage, and track your wedding invitation responses with our invitation management system."
+        />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="My Invitations - Manage Your Wedding Invites" />
+        <meta 
+          name="twitter:description" 
+          content="Create and manage wedding invitations with ease."
+        />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+
       <Navigation
         previousUrl="/my-invitations"
         title="My Invitations"
@@ -61,6 +89,7 @@ export default function MyInvitation() {
           </Link>
         }
       />
+      
       {/* Content Grid */}
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="grid grid-cols-1 gap-6">
@@ -185,15 +214,15 @@ export default function MyInvitation() {
                   <div className="flex items-center gap-6">
                     <div className="flex items-center gap-2">
                       <Users size={12} className="text-emerald-600" />
-                      <span className="text-gray-600">Total Guests: <span className="font-bold text-gray-900">470</span></span>
+                      <span className="text-gray-600">Total Guests: <span className="font-bold text-gray-900">{totalGuests}</span></span>
                     </div>
                     <div className="flex items-center gap-2">
                       <UserCheck size={12} className="text-emerald-600" />
-                      <span className="text-gray-600">Total Confirmed: <span className="font-bold text-emerald-600">165</span></span>
+                      <span className="text-gray-600">Total Confirmed: <span className="font-bold text-emerald-600">{totalConfirmed}</span></span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Eye size={12} className="text-emerald-600" />
-                      <span className="text-gray-600">Total Views: <span className="font-bold text-gray-900">2,169</span></span>
+                      <span className="text-gray-600">Total Views: <span className="font-bold text-gray-900">{totalViews}</span></span>
                     </div>
                   </div>
                 </div>

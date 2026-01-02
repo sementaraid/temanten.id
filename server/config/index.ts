@@ -110,10 +110,6 @@ class Config {
             url: 'http://localhost:3000',
             description: 'Development Server'
           },
-          {
-            url: 'https://api.example.com',
-            description: 'Production Server'
-          }
         ]
       },
       apis: [

@@ -1,10 +1,10 @@
-import { type Response } from 'express';
+import { type Response, type Request } from 'express';
 import { AuthService } from '@server/services/auth.service';
-import { type AuthRequest, type LoginRequest } from '@shared/types';
+import { type LoginRequest } from '@shared/types';
 import config from '@server/config';
 
 export class AuthController {
-  static async login(req: AuthRequest, res: Response): Promise<void> {
+  static async login(req: Request, res: Response): Promise<void> {
     try {
       const { email, password } = req.body as LoginRequest;
 
@@ -28,7 +28,7 @@ export class AuthController {
     }
   }
 
-  static async logout(_req: AuthRequest, res: Response): Promise<void> {
+  static async logout(_req: Request, res: Response): Promise<void> {
     res.clearCookie('token', {
       httpOnly: true,
       secure: config.isProduction,

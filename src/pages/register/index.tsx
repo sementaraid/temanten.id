@@ -10,7 +10,7 @@ import { Input } from '@/components/ui/input'
 import { postFetcher } from '@/lib/fetcher'
 import { Link, useNavigate } from 'react-router'
 import { createUserSchema } from '@shared/schema'
-import { AUTH_SCRIPT_ID } from '@shared/constant'
+import { authCallback } from '@/lib/auth'
 
 type RegisterSchema = z.infer<typeof createUserSchema>
 type RegisterResponse = {
@@ -60,21 +60,9 @@ export const Register = () => {
       })
 
       if (!response) throw Error('Failed to create account')
-      const existing = document.getElementById(AUTH_SCRIPT_ID)
-      if (existing) {
-        existing.remove()
-      }
-
-      const script = document.createElement('script')
-      script.id = AUTH_SCRIPT_ID
-      script.type = 'text/javascript'
-      script.innerHTML = `window.__AUTH__ = ${JSON.stringify({
-        isLoggedIn: true,
-        user: JSON.parse(atob(response.token.split('.')[1]))
-      })
-        }`
-      document.head.appendChild(script)
-      navigate('/dashboard')
+      const { user } = await authCallback(response.token)
+      if (user.role === 'admin') navigate('/dashboard')
+      else navigate('/my-invitations/list')
     }
     catch (err) {
       console.log(err)
